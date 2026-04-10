@@ -1,9 +1,52 @@
+import { Phone, MessageCircle } from "lucide-react";
+
 export default function App() {
   return (
-    <div style={{padding: "40px", fontFamily: "sans-serif"}}>
-      <h1>RAB INDIA</h1>
-      <p>Build on trust, Driven by quality</p>
-      <p>Website is live 🚀</p>
+    <div style={{ fontFamily: "sans-serif", background: "#0f172a", color: "white" }}>
+
+      {/* HERO */}
+      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+        <h1 style={{ fontSize: "3rem" }}>RAB INDIA</h1>
+        <p style={{ fontSize: "1.5rem", color: "#94a3b8" }}>
+          Build on trust, Driven by quality
+        </p>
+        <p style={{ marginTop: "10px" }}>
+          Complete Security & IT Solutions for Modern Businesses
+        </p>
+
+        <div style={{ marginTop: "20px" }}>
+          <a href="tel:+91XXXXXXXXXX">
+            <button style={{ marginRight: "10px", padding: "10px 20px" }}>
+              <Phone size={16}/> Call Now
+            </button>
+          </a>
+
+          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20RAB%20India,%20I%20need%20security%20solutions" target="_blank">
+            <button style={{ padding: "10px 20px" }}>
+              <MessageCircle size={16}/> WhatsApp
+            </button>
+          </a>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section style={{ padding: "40px", textAlign: "center" }}>
+        <h2>Our Services</h2>
+        <div style={{ display: "grid", gap: "20px", marginTop: "20px" }}>
+          <div>CCTV Surveillance</div>
+          <div>Networking Solutions</div>
+          <div>Access Control & Biometrics</div>
+          <div>Security Alarm Systems</div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section style={{ padding: "40px", textAlign: "center" }}>
+        <h2>Contact Us</h2>
+        <p>📞 +91-XXXXXXXXXX</p>
+        <p>📧 your@email.com</p>
+      </section>
+
     </div>
   );
 }
