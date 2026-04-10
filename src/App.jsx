@@ -38,7 +38,14 @@ export default function App() {
           <div>Access Control & Biometrics</div>
           <div>Security Alarm Systems</div>
         </div>
-      </section>
+      <section style={{ padding: "40px", textAlign: "center", background: "#020617" }}>
+  <h2>Why Choose Us</h2>
+  <div style={{ marginTop: "20px" }}>
+    <p>✔ Trusted & Reliable Service</p>
+    <p>✔ Fast Installation & Support</p>
+    <p>✔ Experienced Technical Team</p>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section style={{ padding: "40px", textAlign: "center" }}>
