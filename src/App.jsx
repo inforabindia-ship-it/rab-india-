@@ -15,13 +15,13 @@ export default function App() {
         </p>
 
         <div style={{ marginTop: "20px" }}>
-          <a href="tel:+91XXXXXXXXXX">
+          <a href="tel:+917814421210">
             <button style={{ marginRight: "10px", padding: "10px 20px" }}>
               <Phone size={16}/> Call Now
             </button>
           </a>
 
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20RAB%20India,%20I%20need%20security%20solutions" target="_blank">
+          <a href="https://wa.me/917814421210?text=Hi%20RAB%20India,%20I%20need%20security%20solutions" target="_blank">
             <button style={{ padding: "10px 20px" }}>
               <MessageCircle size={16}/> WhatsApp
             </button>
@@ -43,8 +43,8 @@ export default function App() {
       {/* CONTACT */}
       <section style={{ padding: "40px", textAlign: "center" }}>
         <h2>Contact Us</h2>
-        <p>📞 +91-XXXXXXXXXX</p>
-        <p>📧 your@email.com</p>
+        <p>📞 +91-7814421210</p>
+        <p>📧 info@rabindia.co.in</p>
       </section>
 
     </div>
