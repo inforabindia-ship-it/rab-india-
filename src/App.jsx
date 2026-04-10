@@ -52,7 +52,26 @@ export default function App() {
         <h2>Contact Us</h2>
         <p>📞 +91-7814421210</p>
         <p>📧 info@rabindia.co.in</p>
-      </section>
+      <section style={{ padding: "40px", textAlign: "center" }}>
+  <h2>Get a Quote</h2>
+
+  <form onSubmit={(e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const phone = e.target.phone.value;
+    const msg = `Hi RAB India, I am ${name}. My number is ${phone}`;
+    window.open(`https://wa.me/917814421210?text=${encodeURIComponent(msg)}`);
+  }}>
+    
+    <input name="name" placeholder="Your Name" required style={{ padding: "10px", margin: "10px" }} />
+    <br/>
+    <input name="phone" placeholder="Phone Number" required style={{ padding: "10px", margin: "10px" }} />
+    <br/>
+    <button type="submit" style={{ padding: "10px 20px" }}>
+      Submit Inquiry
+    </button>
+  </form>
+</section>
 
     </div>
   );
