@@ -23,17 +23,43 @@ export default function App() {
     <div style={{ fontFamily: "sans-serif", background: "#f8fafc" }}>
 
       <img src={logo} alt="RAB INDIA" style={{ height: "50px" }} />
-      {/* HEADER */}
-      <div style={{ display: "flex", justifyContent: "space-between", padding: "15px 40px", background: "white", boxShadow: "0 2px 5px rgba(0,0,0,0.1)" }}>
-        <h2>RAB INDIA</h2>
+     {/* HEADER */}
+<div style={{
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "15px 40px",
+  background: "white",
+  boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
+}}>
 
-        <div>
-          <a style={{ margin: "0 10px" }}>Home</a>
-          <a style={{ margin: "0 10px" }}>Products</a>
-          <a style={{ margin: "0 10px" }}>About</a>
-          <a style={{ margin: "0 10px" }}>Contact</a>
-        </div>
-      </div>
+  {/* LEFT: LOGO + NAME */}
+  <div style={{ display: "flex", alignItems: "center" }}>
+    
+    <img 
+      src={logo} 
+      alt="RAB INDIA" 
+      style={{ height: "60px", marginRight: "15px" }} 
+    />
+
+    <div>
+      <h2 style={{ margin: 0 }}>RAB INDIA</h2>
+      <p style={{ margin: 0, fontSize: "12px", color: "#64748b" }}>
+        Build on trust, Driven by quality
+      </p>
+    </div>
+
+  </div>
+
+  {/* RIGHT: NAVBAR */}
+  <div>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}>Home</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}>Products</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}>About</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}>Contact</a>
+  </div>
+
+</div>
 
       {/* SLIDER */}
       <div>
