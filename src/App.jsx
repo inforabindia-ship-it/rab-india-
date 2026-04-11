@@ -38,7 +38,7 @@ export default function App() {
     <img 
       src={logo} 
       alt="RAB INDIA" 
-      style={{ height: "60px", marginRight: "15px" }} 
+      style={{ height: "70px", marginRight: "20px" }} 
     />
 
     <div>
