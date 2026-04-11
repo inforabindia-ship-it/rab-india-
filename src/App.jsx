@@ -5,24 +5,20 @@ export default function App() {
     <div style={{ fontFamily: "sans-serif", background: "#0f172a", color: "white" }}>
 
       {/* HERO */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-        <h1 style={{ fontSize: "3rem" }}>RAB INDIA</h1>
-        <p style={{ fontSize: "1.5rem", color: "#94a3b8" }}>
-          Build on trust, Driven by quality
-        </p>
-        <p style={{ marginTop: "10px" }}>
-          Complete Security & IT Solutions for Modern Businesses
-        </p>
+      <section style={{ padding: "60px", textAlign: "center" }}>
+        <h1>RAB INDIA</h1>
+        <p>Build on trust, Driven by quality</p>
+        <p>Complete Security & IT Solutions for Modern Businesses</p>
 
         <div style={{ marginTop: "20px" }}>
-          <a href="tel:+917814421210">
-            <button style={{ marginRight: "10px", padding: "10px 20px" }}>
+          <a href="tel:+919876543210">
+            <button style={{ marginRight: "10px", padding: "10px" }}>
               <Phone size={16}/> Call Now
             </button>
           </a>
 
-          <a href="https://wa.me/917814421210?text=Hi%20RAB%20India,%20I%20need%20security%20solutions" target="_blank">
-            <button style={{ padding: "10px 20px" }}>
+          <a href="https://wa.me/919876543210?text=Hi%20RAB%20India" target="_blank">
+            <button style={{ padding: "10px" }}>
               <MessageCircle size={16}/> WhatsApp
             </button>
           </a>
@@ -32,19 +28,17 @@ export default function App() {
       {/* SERVICES */}
       <section style={{ padding: "40px", textAlign: "center" }}>
         <h2>Our Services</h2>
-        <div style={{ display: "grid", gap: "20px", marginTop: "20px" }}>
-          <div>CCTV Surveillance</div>
-          <div>Networking Solutions</div>
-          <div>Access Control & Biometrics</div>
-          <div>Security Alarm Systems</div>
-        </div>
+        <p>CCTV Surveillance</p>
+        <p>Networking Solutions</p>
+        <p>Access Control</p>
+        <p>Security Alarm Systems</p>
       </section>
 
       {/* CONTACT */}
       <section style={{ padding: "40px", textAlign: "center" }}>
         <h2>Contact Us</h2>
-        <p>📞 +91-7814421210</p>
-        <p>📧 info@rabindia.co.in</p>
+        <p>📞 +91-9876543210</p>
+        <p>📧 your@email.com</p>
       </section>
 
     </div>
