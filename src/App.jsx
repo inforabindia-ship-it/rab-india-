@@ -38,46 +38,15 @@ export default function App() {
           <div>Access Control & Biometrics</div>
           <div>Security Alarm Systems</div>
         </div>
-      <section style={{ padding: "40px", textAlign: "center", background: "#020617" }}>
-  <h2>Why Choose Us</h2>
-  <div style={{ marginTop: "20px" }}>
-    <p>✔ Trusted & Reliable Service</p>
-    <p>✔ Fast Installation & Support</p>
-    <p>✔ Experienced Technical Team</p>
-  </div>
-</section>
+      </section>
 
       {/* CONTACT */}
       <section style={{ padding: "40px", textAlign: "center" }}>
         <h2>Contact Us</h2>
         <p>📞 +91-7814421210</p>
         <p>📧 info@rabindia.co.in</p>
-      <section style={{ padding: "40px", textAlign: "center" }}>
-  <h2>Get a Quote</h2>
-
-  <form onSubmit={(e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const phone = e.target.phone.value;
-    const msg = `Hi RAB India, I am ${name}. My number is ${phone}`;
-    window.open(`https://wa.me/917814421210?text=${encodeURIComponent(msg)}`);
-  }}>
-    
-    <input name="name" placeholder="Your Name" required style={{ padding: "10px", margin: "10px" }} />
-    <br/>
-    <input name="phone" placeholder="Phone Number" required style={{ padding: "10px", margin: "10px" }} />
-    <br/>
-    <button type="submit" style={{ padding: "10px 20px" }}>
-      Submit Inquiry
-    </button>
-  </form>
-</section>
+      </section>
 
     </div>
   );
 }
-<iframe
-  src="https://www.google.com/maps?q=Baddi,Himachal+Pradesh&output=embed"
-  width="100%"
-  height="300"
-/>
