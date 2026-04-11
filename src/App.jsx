@@ -27,7 +27,7 @@ export default function App() {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "15px 40px",
+  padding: "20px 50px",
   background: "white",
   boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
 }}>
@@ -42,10 +42,10 @@ export default function App() {
     />
 
     <div>
-      <h2 style={{ margin: 0 }}>RAB INDIA</h2>
-      <p style={{ margin: 0, fontSize: "12px", color: "#64748b" }}>
-        Build on trust, Driven by quality
-      </p>
+      <h2 style={{ margin: 0, fontSize: "24px" }}>RAB INDIA</h2>
+      <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
+  Build on trust, Driven by quality
+</p>
     </div>
 
   </div>
