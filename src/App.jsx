@@ -1,3 +1,4 @@
+import logo from "./assets/logo.png";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
   return (
     <div style={{ fontFamily: "sans-serif", background: "#f8fafc" }}>
 
+      <img src={logo} alt="RAB INDIA" style={{ height: "50px" }} />
       {/* HEADER */}
       <div style={{ display: "flex", justifyContent: "space-between", padding: "15px 40px", background: "white", boxShadow: "0 2px 5px rgba(0,0,0,0.1)" }}>
         <h2>RAB INDIA</h2>
