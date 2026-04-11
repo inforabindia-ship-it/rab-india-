@@ -22,7 +22,6 @@ export default function App() {
   return (
     <div style={{ fontFamily: "sans-serif", background: "#f8fafc" }}>
 
-      <img src={logo} alt="RAB INDIA" style={{ height: "50px" }} />
      {/* HEADER */}
 <div style={{
   display: "flex",
