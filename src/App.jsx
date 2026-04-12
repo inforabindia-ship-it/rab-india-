@@ -95,7 +95,11 @@ export default function App() {
     {/* LEFT IMAGE */}
     <img 
   src={welcomeImg} 
-  style={{ width: "400px", borderRadius: "10px" }} 
+  style={{ 
+  width: "450px", 
+  borderRadius: "10px",
+  boxShadow: "0 5px 15px rgba(0,0,0,0.15)"
+}} 
 />
 
     {/* RIGHT TEXT */}
