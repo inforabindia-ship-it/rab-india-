@@ -38,19 +38,26 @@ export default function App() {
 >
 
   {/* LEFT: LOGO + NAME */}
-  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-    
-    <img 
-      src={logo} 
-      alt="RAB INDIA" 
-      style={{ 
-    height: "80px",       
-    marginRight: "20px",
-    objectFit: "contain" 
-      }}  
-    />
+<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
 
-    <div>
+  <img
+    src={logo}
+    alt="RAB INDIA"
+    style={{
+      height: "80px",
+      marginRight: "20px",
+      objectFit: "contain"
+    }}
+  />
+
+  <div>
+    <h2 style={{ margin: 0 }}>RAB INDIA</h2>
+    <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
+      Build on trust, Driven by quality
+    </p>
+  </div>
+
+</div>
       <h2 style={{ margin: 0, fontSize: "24px" }}>RAB INDIA</h2>
 
 <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
