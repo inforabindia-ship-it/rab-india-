@@ -30,6 +30,10 @@ export default function App() {
   padding: "20px 50px",
   background: "white",
   boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
+    
+  position: "sticky",
+  top: 0,
+  zIndex: 1000
 }}>
 
   {/* LEFT: LOGO + NAME */}
@@ -53,13 +57,19 @@ export default function App() {
 
   {/* RIGHT: NAVBAR */}
   <div>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}>Home</a>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}>Products</a>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}>About</a>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}>Contact</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "black"}>Home</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "black"}>Products</a>
+    <a style=style={{ margin: "0 15px", cursor: "pointer" }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "black"}>About</a>
+    <a style={{ margin: "0 15px", cursor: "pointer" }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "black"}>Contact</a>
   </div>
-
-</div>
 
       {/* SLIDER */}
       <div>
