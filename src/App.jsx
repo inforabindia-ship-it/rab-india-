@@ -74,7 +74,7 @@ export default function App() {
   onMouseOver={e => e.target.style.color = "#2563eb"}
   onMouseOut={e => e.target.style.color = "black"}>Contact</a>
   </div>
-/
+ </div>
       {/* SLIDER */}
       <div>
         <img src={images[index]} style={{ width: "100%", height: "400px", objectFit: "cover" }} />
