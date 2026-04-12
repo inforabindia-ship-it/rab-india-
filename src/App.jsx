@@ -81,17 +81,45 @@ export default function App() {
       </div>
 
       {/* WELCOME */}
-      <section style={{ padding: "50px", textAlign: "center" }}>
-        <h2>Welcome to RAB INDIA</h2>
+<section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
 
-        <p style={{ maxWidth: "900px", margin: "auto", marginTop: "20px" }}>
-          Founded in the year 2016 by Mr. Rahul Goyal, RAB INDIA offers telecom and security solutions to customers all over India. With more than 1000+ customers only in the north region of India, renowned clients trust RAB INDIA for networking, access control, biometric, CCTV, fire alarm, PA system and more.
-        </p>
+  <div style={{ 
+    display: "flex", 
+    flexWrap: "wrap", 
+    alignItems: "center", 
+    justifyContent: "center", 
+    gap: "30px" 
+  }}>
 
-        <button style={{ marginTop: "20px", padding: "10px 20px", background: "#2563eb", color: "white", border: "none" }}>
-          Read More
-        </button>
-      </section>
+    {/* LEFT IMAGE */}
+    <img 
+      src="https://images.unsplash.com/photo-1581091870627-3c1d8b3b8f92"
+      style={{ width: "400px", borderRadius: "10px" }}
+    />
+
+    {/* RIGHT TEXT */}
+    <div style={{ maxWidth: "500px" }}>
+      <h2>Welcome to RAB INDIA</h2>
+
+      <p>
+        Founded in the year 2016 by Mr. Rahul Goyal, RAB INDIA offers telecom and security solutions to customers all over India. With more than 1000+ customers only in the north region of India, renowned clients trust and rely on RAB INDIA for advanced security and IT solutions.
+      </p>
+
+      <button style={{ 
+        marginTop: "15px", 
+        padding: "10px 20px", 
+        background: "#2563eb", 
+        color: "white", 
+        border: "none",
+        borderRadius: "5px"
+      }}>
+        Read More
+      </button>
+    </div>
+
+  </div>
+
+</section>
 
       {/* PRODUCTS */}
       <section style={{ padding: "50px", background: "white", textAlign: "center" }}>
