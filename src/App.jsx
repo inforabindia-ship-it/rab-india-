@@ -60,14 +60,14 @@ export default function App() {
 </div>
 
   {/* RIGHT: NAVBAR */}
-  <div>
+<div> 
     <a style={{ margin: "0 15px", cursor: "pointer" }}
   onMouseOver={e => e.target.style.color = "#2563eb"}
   onMouseOut={e => e.target.style.color = "black"}>Home</a>
     <a style={{ margin: "0 15px", cursor: "pointer" }}
   onMouseOver={e => e.target.style.color = "#2563eb"}
   onMouseOut={e => e.target.style.color = "black"}>Products</a>
-    <a style=style={{ margin: "0 15px", cursor: "pointer" }}
+    <a style={{ margin: "0 15px", cursor: "pointer" }}
   onMouseOver={e => e.target.style.color = "#2563eb"}
   onMouseOut={e => e.target.style.color = "black"}>About</a>
     <a style={{ margin: "0 15px", cursor: "pointer" }}
