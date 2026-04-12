@@ -58,13 +58,6 @@ export default function App() {
   </div>
 
 </div>
-      <h2 style={{ margin: 0, fontSize: "24px" }}>RAB INDIA</h2>
-
-<p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
-  Build on trust, Driven by quality
-</p>
-    </div>
-  </div>
 
   {/* RIGHT: NAVBAR */}
   <div>
