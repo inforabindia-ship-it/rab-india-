@@ -1,4 +1,5 @@
 import logo from "./assets/logo.png";
+import welcomeImg from "./assets/welcome.jpg";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -93,9 +94,9 @@ export default function App() {
 
     {/* LEFT IMAGE */}
     <img 
-      src="https://images.unsplash.com/photo-1581091870627-3c1d8b3b8f92"
-      style={{ width: "400px", borderRadius: "10px" }}
-    />
+  src={welcomeImg} 
+  style={{ width: "400px", borderRadius: "10px" }} 
+/>
 
     {/* RIGHT TEXT */}
     <div style={{ maxWidth: "500px" }}>
