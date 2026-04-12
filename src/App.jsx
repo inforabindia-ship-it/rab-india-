@@ -89,6 +89,7 @@ export default function App() {
     flexWrap: "wrap", 
     alignItems: "center", 
     justifyContent: "center", 
+    lineHeight: "1.6",
     gap: "30px" 
   }}>
 
@@ -112,15 +113,19 @@ export default function App() {
         Founded in the year 2016 by Mr. Rahul Goyal, RAB INDIA offers telecom and security solutions to customers all over India. With more than 1000+ customers only in the north region of India, renowned clients trust and rely on RAB INDIA for advanced security and IT solutions.
       </p>
 
-      <button style={{ 
-  marginTop: "15px", 
-  padding: "12px 25px", 
-  background: "#2563eb", 
-  color: "white", 
-  border: "none",
-  borderRadius: "6px",
-  cursor: "pointer"
-}}>
+     <button 
+  style={{ 
+    marginTop: "15px", 
+    padding: "12px 25px", 
+    background: "#2563eb", 
+    color: "white", 
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer"
+  }}
+  onMouseOver={e => e.target.style.background = "#1d4ed8"}
+  onMouseOut={e => e.target.style.background = "#2563eb"}
+>
   Read More
 </button>
     </div>
