@@ -37,7 +37,7 @@ export default function App() {
 }}>
 
   {/* LEFT: LOGO + NAME */}
-  <div style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
     
     <img 
       src={logo} 
