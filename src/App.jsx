@@ -1,5 +1,5 @@
 import logo from "./assets/logo.png";
-import welcomeImg from "./assets/welcome.jpg";
+import welcomeImg from "./assets/welcome.png";
 import { useState, useEffect } from "react";
 
 export default function App() {
