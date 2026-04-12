@@ -94,7 +94,7 @@ export default function App() {
 
     {/* LEFT IMAGE */}
     <img 
-  <img src="/src/assets/welcome.png" /> 
+  img src="/src/assets/welcome.png" 
   style={{ width: "400px", borderRadius: "10px" }} 
 />
 
