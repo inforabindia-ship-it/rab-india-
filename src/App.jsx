@@ -43,9 +43,9 @@ export default function App() {
       src={logo} 
       alt="RAB INDIA" 
       style={{ 
-    height: "80px",        // bigger logo
+    height: "80px",       
     marginRight: "20px",
-    objectFit: "contain"   // keeps logo clean
+    objectFit: "contain" 
       }}  
     />
 
