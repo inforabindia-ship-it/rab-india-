@@ -104,22 +104,25 @@ export default function App() {
 
     {/* RIGHT TEXT */}
     <div style={{ maxWidth: "500px" }}>
-      <h2>Welcome to RAB INDIA</h2>
+      <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+  Welcome to RAB INDIA
+</h2>
 
       <p>
         Founded in the year 2016 by Mr. Rahul Goyal, RAB INDIA offers telecom and security solutions to customers all over India. With more than 1000+ customers only in the north region of India, renowned clients trust and rely on RAB INDIA for advanced security and IT solutions.
       </p>
 
       <button style={{ 
-        marginTop: "15px", 
-        padding: "10px 20px", 
-        background: "#2563eb", 
-        color: "white", 
-        border: "none",
-        borderRadius: "5px"
-      }}>
-        Read More
-      </button>
+  marginTop: "15px", 
+  padding: "12px 25px", 
+  background: "#2563eb", 
+  color: "white", 
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer"
+}}>
+  Read More
+</button>
     </div>
 
   </div>
