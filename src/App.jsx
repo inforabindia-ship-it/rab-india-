@@ -30,7 +30,7 @@ export default function App() {
   padding: "20px 50px",
   background: "white",
   boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
-    
+  
   position: "sticky",
   top: 0,
   zIndex: 1000
