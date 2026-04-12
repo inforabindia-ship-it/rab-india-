@@ -23,18 +23,19 @@ export default function App() {
     <div style={{ fontFamily: "sans-serif", background: "#f8fafc" }}>
 
      {/* HEADER */}
-<div style={{
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "20px 50px",
-  background: "white",
-  boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
-  
-  position: "sticky",
-  top: 0,
-  zIndex: 1000
-}}>
+<div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "20px 50px",
+    background: "white",
+    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+  }}
+>
 
   {/* LEFT: LOGO + NAME */}
   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -56,7 +57,6 @@ export default function App() {
   Build on trust, Driven by quality
 </p>
     </div>
-
   </div>
 
   {/* RIGHT: NAVBAR */}
