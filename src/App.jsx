@@ -42,7 +42,11 @@ export default function App() {
     <img 
       src={logo} 
       alt="RAB INDIA" 
-      style={{ height: "70px", marginRight: "20px" }} 
+      style={{ 
+    height: "80px",        // bigger logo
+    marginRight: "20px",
+    objectFit: "contain"   // keeps logo clean
+      }}  
     />
 
     <div>
