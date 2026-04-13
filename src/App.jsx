@@ -97,6 +97,7 @@ export default function App() {
       width: "100%", 
       height: "450px", 
       objectFit: "cover" 
+      background: "#ffffff"
     }} 
   />
 
@@ -109,8 +110,6 @@ export default function App() {
     color: "white",
     textAlign: "center"
   }}>
-    <h2>RAB INDIA</h2>
-    <p>Complete Security & IT Solutions</p>
   </div>
 </div>
 
