@@ -90,12 +90,12 @@ export default function App() {
   </div>
  </div>
       {/* SLIDER */}
-<div style={{ width: "100%", overflow: "hidden" }}>
+<div style={{ width: "100%" }}>
   <img 
     src={images[index]} 
     style={{ 
       width: "100%", 
-      height: "450px",
+      height: "auto",
       display: "block"
     }} 
   />
