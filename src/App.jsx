@@ -94,8 +94,8 @@ export default function App() {
   <img 
     src={images[index]} 
     style={{ 
-      width: "90%", 
-      height: "600px",
+      width: "100%", 
+      height: "450px",
       display: "block"
     }} 
   />
