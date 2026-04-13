@@ -1,3 +1,11 @@
+import networking from "./assets/networking.png";
+import telecom from "./assets/telecom.png";
+import cctv from "./assets/cctv.png";
+import conference from "./assets/conference.png";
+import weighing from "./assets/weighing.png";
+import fire from "./assets/fire.png";
+import access from "./assets/access.png";
+import interlocking from "./assets/interlocking.png";
 import logo from "./assets/logo.png";
 import welcomeImg from "./assets/welcome.png";
 import { useState, useEffect } from "react";
@@ -6,9 +14,14 @@ export default function App() {
 
   // Simple slider
   const images = [
-    "https://images.unsplash.com/photo-1581092335397-9583eb92d232",
-    "https://images.unsplash.com/photo-1581091215367-59ab6b4b1b4b",
-    "https://images.unsplash.com/photo-1581093588401-22b3c2f5d2a4"
+    networking,
+  telecom,
+  cctv,
+  conference,
+  weighing,
+  access,
+  interlocking,
+  fire
   ];
 
   const [index, setIndex] = useState(0);
@@ -77,9 +90,29 @@ export default function App() {
   </div>
  </div>
       {/* SLIDER */}
-      <div>
-        <img src={images[index]} style={{ width: "100%", height: "400px", objectFit: "cover" }} />
-      </div>
+<div style={{ position: "relative" }}>
+  <img 
+    src={images[index]} 
+    style={{ 
+      width: "100%", 
+      height: "450px", 
+      objectFit: "cover" 
+    }} 
+  />
+
+  {/* Overlay text */}
+  <div style={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "white",
+    textAlign: "center"
+  }}>
+    <h2>RAB INDIA</h2>
+    <p>Complete Security & IT Solutions</p>
+  </div>
+</div>
 
       {/* WELCOME */}
 <section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
