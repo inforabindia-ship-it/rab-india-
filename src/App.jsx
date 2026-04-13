@@ -96,7 +96,7 @@ export default function App() {
     style={{ 
       width: "100%", 
       height: "450px", 
-      objectFit: "cover", 
+      objectFit: "contain", 
       background: "#ffffff"
     }} 
   />
