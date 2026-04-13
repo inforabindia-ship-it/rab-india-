@@ -95,7 +95,7 @@ export default function App() {
     src={images[index]} 
     style={{ 
       width: "100%", 
-      height: "500px", 
+      height: "400px", 
       objectFit: "cover", 
       background: "#f8fafc"
     }} 
