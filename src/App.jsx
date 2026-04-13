@@ -96,14 +96,13 @@ export default function App() {
     style={{ 
       width: "100%", 
       height: "450px", 
-      objectFit: "cover" 
+      objectFit: "cover", 
       background: "#ffffff"
     }} 
   />
-
   {/* Overlay text */}
   <div style={{
-    position: "absolute",
+    textAlign: "center",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
