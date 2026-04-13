@@ -90,13 +90,14 @@ export default function App() {
   </div>
  </div>
       {/* SLIDER */}
-<div style={{ width: "100%" }}>
+<div style={{ textAlign: "center" }}>
   <img 
     src={images[index]} 
     style={{ 
       width: "100%", 
-      height: "auto",
-      display: "block"
+      height: "500px",
+      objectFit: "contain",
+      background: "#f8fafc"
     }} 
   />
   {/* Overlay text */}
