@@ -91,33 +91,55 @@ export default function App() {
  </div>
       {/* SLIDER */}
 <div style={{ 
+  position: "relative",
   width: "100%", 
-  height: "500px", 
-  display: "flex", 
-  alignItems: "center", 
-  justifyContent: "center",
-  background: "#f8fafc"
+  height: "500px",
+  overflow: "hidden"
 }}>
+
+  {/* IMAGE */}
   <img 
     src={images[index]} 
     style={{ 
-      maxWidth: "100%", 
-      maxHeight: "100%", 
-      objectFit: "contain"
+      width: "100%", 
+      height: "100%", 
+      objectFit: "cover"
     }} 
   />
-  {/* Overlay text */}
+
+  {/* OVERLAY CONTENT */}
   <div style={{
-    textAlign: "center",
+    position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     color: "white",
     textAlign: "center"
   }}>
-  </div>
-</div>
+    
+    <h1 style={{ fontSize: "40px", margin: 0 }}>
+      RAB INDIA
+    </h1>
 
+    <p style={{ marginTop: "10px" }}>
+      Complete Security & IT Solutions
+    </p>
+
+    <button style={{
+      marginTop: "15px",
+      padding: "10px 20px",
+      background: "#2563eb",
+      color: "white",
+      border: "none",
+      borderRadius: "6px",
+      cursor: "pointer"
+    }}>
+      Get Quote
+    </button>
+
+  </div>
+
+</div>
       {/* WELCOME */}
 <section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
 
