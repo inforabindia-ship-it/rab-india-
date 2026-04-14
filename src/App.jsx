@@ -123,37 +123,6 @@ export default function App() {
   >
     Get Quote
   </button>
-
-  {/* OVERLAY CONTENT */}
-  <div style={{
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    color: "white",
-    textAlign: "center"
-  }}>
-    
-    <h1 style={{ fontSize: "40px", margin: 0 }}>
-      RAB INDIA
-    </h1>
-
-    <p style={{ marginTop: "10px" }}>
-      Complete Security & IT Solutions
-    </p>
-
-    <button style={{
-      marginTop: "15px",
-      padding: "10px 20px",
-      background: "#2563eb",
-      color: "white",
-      border: "none",
-      borderRadius: "6px",
-      cursor: "pointer"
-    }}>
-      Get Quote
-    </button>
-
   </div>
 
 </div>
