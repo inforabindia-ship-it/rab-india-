@@ -89,7 +89,7 @@ export default function App() {
   onMouseOut={e => e.target.style.color = "black"}>Contact</a>
   </div>
  </div>
-      {/* SLIDER */}
+{/* SLIDER */}
 <div style={{ 
   width: "100%", 
   height: "500px",
@@ -103,9 +103,10 @@ export default function App() {
       objectFit: "cover"
     }} 
   />
-  </div>
-</div>      
-  <div style={{ 
+</div>
+
+{/* CTA BELOW SLIDER */}
+<div style={{ 
   textAlign: "center", 
   marginTop: "20px",
   marginBottom: "20px"
@@ -125,8 +126,7 @@ export default function App() {
   >
     Get Quote
   </button>
-  </div>
-
+</div>
 </div>
       {/* WELCOME */}
 <section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
