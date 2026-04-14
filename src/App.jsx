@@ -128,7 +128,7 @@ export default function App() {
     Get Quote
   </button>
 </div>
-</div>
+
       {/* WELCOME */}
 <section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
 
