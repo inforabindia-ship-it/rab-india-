@@ -89,7 +89,8 @@ export default function App() {
   onMouseOut={e => e.target.style.color = "black"}>Contact</a>
   </div>
  </div>
-{/* SLIDER */}
+
+      {/* SLIDER */}
 <div style={{ 
   width: "100%", 
   height: "500px",
