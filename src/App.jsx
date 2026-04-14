@@ -139,7 +139,7 @@ export default function App() {
     alignItems: "center", 
     justifyContent: "center", 
     lineHeight: "1.6",
-    gap: "30px" 
+    gap: "60px" 
   }}>
 
     {/* LEFT IMAGE */}
@@ -154,7 +154,7 @@ export default function App() {
 
     {/* RIGHT TEXT */}
     <div style={{ maxWidth: "500px" }}>
-      <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+      <h2 style={{ fontSize: "28px", marginBottom: "15px" }}>
   Welcome to RAB INDIA
 </h2>
 
@@ -164,7 +164,7 @@ export default function App() {
 
      <button 
   style={{ 
-    marginTop: "10px", 
+    marginTop: "15px", 
     padding: "12px 25px", 
     background: "#2563eb", 
     color: "white", 
