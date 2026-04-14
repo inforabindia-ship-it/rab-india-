@@ -91,13 +91,10 @@ export default function App() {
  </div>
       {/* SLIDER */}
 <div style={{ 
-  position: "relative",
   width: "100%", 
   height: "500px",
   overflow: "hidden"
 }}>
-
-  {/* IMAGE */}
   <img 
     src={images[index]} 
     style={{ 
@@ -106,6 +103,26 @@ export default function App() {
       objectFit: "cover"
     }} 
   />
+  <div style={{ 
+  textAlign: "center", 
+  marginTop: "20px",
+  marginBottom: "20px"
+}}>
+  <button 
+    style={{ 
+      padding: "12px 30px", 
+      background: "#2563eb", 
+      color: "white", 
+      border: "none",
+      borderRadius: "6px",
+      fontSize: "16px",
+      cursor: "pointer"
+    }}
+    onMouseOver={e => e.target.style.background = "#1d4ed8"}
+    onMouseOut={e => e.target.style.background = "#2563eb"}
+  >
+    Get Quote
+  </button>
 
   {/* OVERLAY CONTENT */}
   <div style={{
