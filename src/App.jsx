@@ -106,11 +106,13 @@ export default function App() {
   />
 </div>
 
-{/* CTA BELOW SLIDER */}
+{/* CTA BELOW SLIDER (STICKED) */}
 <div style={{ 
-  textAlign: "center", 
-  marginTop: "20px",
-  marginBottom: "20px"
+  textAlign: "center",
+  marginTop: "-25px",   
+  marginBottom: "30px",
+  position: "relative",
+  zIndex: 10
 }}>
   <button 
     style={{ 
@@ -118,12 +120,11 @@ export default function App() {
       background: "#2563eb", 
       color: "white", 
       border: "none",
-      borderRadius: "6px",
+      borderRadius: "8px",
       fontSize: "16px",
-      cursor: "pointer"
+      cursor: "pointer",
+      boxShadow: "0 6px 20px rgba(0,0,0,0.15)"
     }}
-    onMouseOver={e => e.target.style.background = "#1d4ed8"}
-    onMouseOut={e => e.target.style.background = "#2563eb"}
   >
     Get Quote
   </button>
