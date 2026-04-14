@@ -103,7 +103,8 @@ export default function App() {
       objectFit: "cover"
     }} 
   />
-</div>
+  </div>
+</div>      
   <div style={{ 
   textAlign: "center", 
   marginTop: "20px",
