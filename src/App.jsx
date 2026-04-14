@@ -34,7 +34,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "sans-serif", background: "#f8fafc" }}>
+    <div style={{ fontFamily: "Poppins,sans-serif", background: "#f8fafc" }}>
 
      {/* HEADER */}
 <div
@@ -44,7 +44,7 @@ export default function App() {
     alignItems: "center",
     padding: "20px 50px",
     background: "white",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
     position: "sticky",
     top: 0,
     zIndex: 1000,
@@ -152,7 +152,7 @@ export default function App() {
 
      <button 
   style={{ 
-    marginTop: "15px", 
+    marginTop: "10px", 
     padding: "12px 25px", 
     background: "#2563eb", 
     color: "white", 
