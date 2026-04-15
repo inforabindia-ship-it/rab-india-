@@ -131,7 +131,7 @@ export default function App() {
 </div>
 
       {/* WELCOME */}
-<section style={{ padding: "60px 20px", background: "#f1f5f9" }}>
+<section style={{ padding: "80px 20px", background: "#f1f5f9" }}>
 
   <div style={{ 
     display: "flex", 
@@ -146,7 +146,7 @@ export default function App() {
     <img 
   src={welcomeImg} 
   style={{ 
-  width: "450px", 
+  width: "500px", 
   borderRadius: "10px",
   boxShadow: "0 5px 15px rgba(0,0,0,0.15)"
 }} 
