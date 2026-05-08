@@ -466,8 +466,8 @@ export default function App() {
       }}
     >
 
-      {[Venus, colgate, Fossil, growel, wipro, abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird, 
-        Venus, colgate, Fossil, growel, wipro, abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird,].map((logo, i) => (
+      {[Venus, colgate, fossil, growel, wipro, Abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird, 
+        Venus, colgate, fossil, growel, wipro, Abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird,].map((logo, i) => (
 
         <img
           key={i}
