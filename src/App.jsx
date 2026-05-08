@@ -670,32 +670,133 @@ export default function App() {
 </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#020617", color: "white", padding: "40px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))" }}>
-          
-          <div>
-            <h3>About Us</h3>
-            <p>RAB INDIA provides telecom and security solutions across India.</p>
-          </div>
+<footer
+  style={{
+    background: "#020617",
+    color: "white",
+    padding: "70px 50px 30px"
+  }}
+>
 
-          <div>
-            <h3>Contact</h3>
-            <p>Email: info@rabindia.co.in</p>
-            <p>Phone: +91 7814421210</p>
-          </div>
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+      gap: "50px",
+      marginBottom: "50px"
+    }}
+  >
 
-          <div>
-            <h3>Quick Links</h3>
-            <p>Home</p>
-            <p>Products</p>
-            <p>Contact</p>
-          </div>
+    {/* COMPANY */}
+    <div>
 
-        </div>
+      <img
+        src={logo}
+        alt="RAB INDIA"
+        style={{
+          height: "70px",
+          marginBottom: "20px"
+        }}
+      />
 
-        <p style={{ textAlign: "center", marginTop: "20px" }}>
-          © RAB INDIA
-        </p>
+      <p
+        style={{
+          color: "#cbd5e1",
+          lineHeight: "1.8"
+        }}
+      >
+        RAB INDIA delivers advanced telecom, networking and security
+        solutions across India with trusted service and technical expertise.
+      </p>
+
+    </div>
+
+    {/* QUICK LINKS */}
+    <div>
+
+      <h3 style={{ marginBottom: "25px" }}>
+        Quick Links
+      </h3>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+        Home
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+        Products
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+        About Us
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+        Contact
+      </p>
+
+    </div>
+
+    {/* PRODUCTS */}
+    <div>
+
+      <h3 style={{ marginBottom: "25px" }}>
+        Our Solutions
+      </h3>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
+        CCTV Surveillance
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
+        Telecom Solutions
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
+        Access Control
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
+        Conference Solutions
+      </p>
+
+    </div>
+
+    {/* CONTACT */}
+    <div>
+
+      <h3 style={{ marginBottom: "25px" }}>
+        Contact Us
+      </h3>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
+        📍 Baddi, Himachal Pradesh
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
+        📞 +91 7814421210
+      </p>
+
+      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
+        ✉ info@rabindia.co.in
+      </p>
+
+    </div>
+
+  </div>
+
+  {/* BOTTOM */}
+  <div
+    style={{
+      borderTop: "1px solid #1e293b",
+      paddingTop: "25px",
+      textAlign: "center",
+      color: "#94a3b8",
+      fontSize: "14px"
+    }}
+  >
+    © 2025 RAB INDIA. All Rights Reserved.
+  </div>
+
       </footer>
 
       <style>
