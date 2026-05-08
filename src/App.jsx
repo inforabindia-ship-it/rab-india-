@@ -197,7 +197,8 @@ export default function App() {
     textAlign: "center"
   }}
 >  
-  
+
+  <div
     style={{
       display: "grid",
       gridTemplateColumns: "repeat(3, 1fr)",
