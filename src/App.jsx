@@ -515,17 +515,159 @@ export default function App() {
 </section>
 
       {/* WHY US */}
-      <section style={{ padding: "50px", background: "white" }}>
-        <h2 style={{ textAlign: "center" }}>Why Us</h2>
+<section
+  style={{
+    padding: "90px 40px",
+    background: "#f8fafc"
+  }}
+>
 
-        <div style={{ maxWidth: "800px", margin: "auto", marginTop: "20px" }}>
-          <p>✔ Strong Presence In North India</p>
-          <p>✔ Team Of Technical Experts</p>
-          <p>✔ Multiple Solutions Under One Roof</p>
-          <p>✔ 24/7 Technical Support</p>
-          <p>✔ Customer Satisfaction First</p>
-        </div>
-      </section>
+  <div style={{ textAlign: "center", marginBottom: "60px" }}>
+    <h2
+      style={{
+        fontSize: "38px",
+        color: "#0f172a",
+        marginBottom: "15px"
+      }}
+    >
+      Why Choose RAB INDIA
+    </h2>
+
+    <p
+      style={{
+        color: "#64748b",
+        fontSize: "17px"
+      }}
+    >
+      Delivering trusted telecom & security solutions across India
+    </p>
+  </div>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+      gap: "30px",
+      maxWidth: "1200px",
+      margin: "auto"
+    }}
+  >
+
+    {/* BOX 1 */}
+    <div
+      style={{
+        background: "white",
+        padding: "35px",
+        borderRadius: "18px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
+        transition: "0.3s",
+        textAlign: "center"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🏆</div>
+
+      <h3 style={{ marginBottom: "15px" }}>
+        Industry Experience
+      </h3>
+
+      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
+        Serving clients across India since 2016 with trusted solutions.
+      </p>
+    </div>
+
+    {/* BOX 2 */}
+    <div
+      style={{
+        background: "white",
+        padding: "35px",
+        borderRadius: "18px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
+        transition: "0.3s",
+        textAlign: "center"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🛠️</div>
+
+      <h3 style={{ marginBottom: "15px" }}>
+        Technical Experts
+      </h3>
+
+      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
+        Skilled professionals delivering quality installations & support.
+      </p>
+    </div>
+
+    {/* BOX 3 */}
+    <div
+      style={{
+        background: "white",
+        padding: "35px",
+        borderRadius: "18px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
+        transition: "0.3s",
+        textAlign: "center"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <div style={{ fontSize: "45px", marginBottom: "20px" }}>⚡</div>
+
+      <h3 style={{ marginBottom: "15px" }}>
+        Fast Support
+      </h3>
+
+      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
+        Quick response and reliable after-sales technical assistance.
+      </p>
+    </div>
+
+    {/* BOX 4 */}
+    <div
+      style={{
+        background: "white",
+        padding: "35px",
+        borderRadius: "18px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
+        transition: "0.3s",
+        textAlign: "center"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🤝</div>
+
+      <h3 style={{ marginBottom: "15px" }}>
+        Customer Trust
+      </h3>
+
+      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
+        Trusted by 1000+ customers for quality and long-term partnerships.
+      </p>
+    </div>
+
+  </div>
+
+</section>
 
       {/* FOOTER */}
       <footer style={{ background: "#020617", color: "white", padding: "40px" }}>
