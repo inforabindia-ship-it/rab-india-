@@ -681,7 +681,7 @@ export default function App() {
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr 1fr",
+      gridTemplateColumns: "1.5fr 1fr 1.2fr 1fr",
 alignItems: "start",
       gap: "40px",
       marginBottom: "50px"
@@ -742,31 +742,6 @@ alignItems: "start",
 
       <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
         Contact
-      </p>
-
-    </div>
-
-    {/* PRODUCTS */}
-    <div>
-
-      <h3 style={{ marginBottom: "25px" }}>
-        Our Solutions
-      </h3>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        CCTV Surveillance
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Telecom Solutions
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Access Control
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Conference Solutions
       </p>
 
     </div>
