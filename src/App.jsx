@@ -674,7 +674,7 @@ export default function App() {
   style={{
     background: "#0f172a",
     color: "white",
-    padding: "70px 50px 30px"
+    padding: "55px 50px 25px"
   }}
 >
 
@@ -684,7 +684,7 @@ export default function App() {
       gridTemplateColumns: "1.5fr 1fr 1.2fr 1fr",
 alignItems: "start",
       gap: "40px",
-      marginBottom: "50px"
+      : "50px"
     }}
   >
 
@@ -696,7 +696,7 @@ alignItems: "start",
         alt="RAB INDIA"
         style={{
           height: "85px",
-          marginBottom: "20px"
+          : "20px"
         }}
       />
 
@@ -715,14 +715,14 @@ alignItems: "start",
     {/* QUICK LINKS */}
     <div>
 
-      <h3 style={{ marginBottom: "25px" }}>
+      <h3 style={{ : "25px" }}>
         Quick Links
       </h3>
 
       <p  
         style={{
     color: "#cbd5e1",
-    marginBottom: "12px",
+    : "12px",
     cursor: "pointer",
     transition: "0.3s"
   }}
@@ -732,15 +732,15 @@ alignItems: "start",
         Home
       </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
         Products
       </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
         About Us
       </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
+      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
         Contact
       </p>
 
