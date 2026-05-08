@@ -669,116 +669,100 @@ export default function App() {
 
 </section>
 
-      {/* FOOTER */}
+     {/* FOOTER */}
 <footer
   style={{
-    background: "#020617",
-    color: "white",
-    padding: "70px 50px 30px"
+    background: "white",
+    padding: "60px 40px 25px",
+    borderTop: "1px solid #e2e8f0"
   }}
 >
 
+  {/* TOP */}
   <div
     style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-      gap: "50px",
-      marginBottom: "50px"
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+      gap: "40px",
+      marginBottom: "40px"
     }}
   >
 
-    {/* COMPANY */}
-    <div>
+    {/* LEFT */}
+    <div style={{ maxWidth: "350px" }}>
 
       <img
         src={logo}
         alt="RAB INDIA"
         style={{
-          height: "70px",
+          height: "75px",
           marginBottom: "20px"
         }}
       />
 
       <p
         style={{
-          color: "#cbd5e1",
+          color: "#64748b",
           lineHeight: "1.8"
         }}
       >
-        RAB INDIA delivers advanced telecom, networking and security
-        solutions across India with trusted service and technical expertise.
+        Delivering trusted telecom, networking and security solutions
+        across India with innovation and quality service.
       </p>
 
     </div>
 
-    {/* QUICK LINKS */}
-    <div>
+    {/* RIGHT */}
+    <div
+      style={{
+        display: "flex",
+        gap: "80px",
+        flexWrap: "wrap"
+      }}
+    >
 
-      <h3 style={{ marginBottom: "25px" }}>
-        Quick Links
-      </h3>
+      {/* LINKS */}
+      <div>
+        <h3 style={{ marginBottom: "18px", color: "#0f172a" }}>
+          Links
+        </h3>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
-        Home
-      </p>
+        <p style={{ color: "#64748b", marginBottom: "12px", cursor: "pointer" }}>
+          Home
+        </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
-        Products
-      </p>
+        <p style={{ color: "#64748b", marginBottom: "12px", cursor: "pointer" }}>
+          Products
+        </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
-        About Us
-      </p>
+        <p style={{ color: "#64748b", marginBottom: "12px", cursor: "pointer" }}>
+          About
+        </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px", cursor: "pointer" }}>
-        Contact
-      </p>
+        <p style={{ color: "#64748b", cursor: "pointer" }}>
+          Contact
+        </p>
+      </div>
 
-    </div>
+      {/* CONTACT */}
+      <div>
+        <h3 style={{ marginBottom: "18px", color: "#0f172a" }}>
+          Contact
+        </h3>
 
-    {/* PRODUCTS */}
-    <div>
+        <p style={{ color: "#64748b", marginBottom: "12px" }}>
+          Baddi, Himachal Pradesh
+        </p>
 
-      <h3 style={{ marginBottom: "25px" }}>
-        Our Solutions
-      </h3>
+        <p style={{ color: "#64748b", marginBottom: "12px" }}>
+          +91 7814421210
+        </p>
 
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        CCTV Surveillance
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Telecom Solutions
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Access Control
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "12px" }}>
-        Conference Solutions
-      </p>
-
-    </div>
-
-    {/* CONTACT */}
-    <div>
-
-      <h3 style={{ marginBottom: "25px" }}>
-        Contact Us
-      </h3>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        📍 Baddi, Himachal Pradesh
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        📞 +91 7814421210
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        ✉ info@rabindia.co.in
-      </p>
+        <p style={{ color: "#64748b" }}>
+          info@rabindia.co.in
+        </p>
+      </div>
 
     </div>
 
@@ -787,18 +771,17 @@ export default function App() {
   {/* BOTTOM */}
   <div
     style={{
-      borderTop: "1px solid #1e293b",
-      paddingTop: "25px",
+      borderTop: "1px solid #e2e8f0",
+      paddingTop: "20px",
       textAlign: "center",
       color: "#94a3b8",
       fontSize: "14px"
     }}
   >
-    © 2025 RAB INDIA. All Rights Reserved.
+    © 2025 RAB INDIA — All Rights Reserved
   </div>
 
-      </footer>
-
+</footer>
       <style>
 {`
 @keyframes scroll {
