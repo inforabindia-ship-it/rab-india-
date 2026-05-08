@@ -196,25 +196,11 @@ export default function App() {
     background: "#ffffff",
     textAlign: "center"
   }}
->
-  <h2
-    style={{
-      fontSize: "36px",
-      marginBottom: "15px",
-      color: "#0f172a"
-    }}
-  >
-    Our Products
-  </h2>
-
-  <p style={{ color: "#64748b", marginBottom: "50px" }}>
-    Advanced telecom & security solutions for modern businesses
-  </p>
-
-  <div
+>  
+  
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gridTemplateColumns: "repeat(3, 1fr)",
       gap: "30px"
     }}
   >
