@@ -434,7 +434,7 @@ export default function App() {
 <section
   style={{
     padding: "70px 0",
-    background: "#f8fafc",
+    background: "white",
     overflow: "hidden"
   }}
 >
@@ -499,15 +499,12 @@ export default function App() {
             height: "80px",
             width: "auto",
             objectFit: "contain",
-            filter: "grayscale(100%)",
             transition: "0.3s"
           }}
           onMouseOver={e => {
-            e.currentTarget.style.filter = "grayscale(0%)";
             e.currentTarget.style.transform = "scale(1.08)";
           }}
           onMouseOut={e => {
-            e.currentTarget.style.filter = "grayscale(100%)";
             e.currentTarget.style.transform = "scale(1)";
           }}
         />
@@ -558,6 +555,20 @@ export default function App() {
           © RAB INDIA
         </p>
       </footer>
+
+      <style>
+{`
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+`}
+</style>
       
     </div>
   );
