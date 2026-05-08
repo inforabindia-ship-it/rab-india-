@@ -770,6 +770,27 @@ export default function App() {
 
     </div>
 
+    {/* MAP */}
+<div>
+
+  <h3 style={{ marginBottom: "25px" }}>
+    Our Location
+  </h3>
+
+  <iframe
+    src="https://www.google.com/maps?q=Baddi,Himachal Pradesh&output=embed"
+    width="280"
+    height="180"
+    style={{
+      border: "0",
+      borderRadius: "12px"
+    }}
+    allowFullScreen=""
+    loading="lazy"
+  ></iframe>
+
+</div>
+    
     {/* CONTACT */}
     <div>
 
