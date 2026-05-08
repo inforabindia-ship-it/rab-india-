@@ -1,3 +1,14 @@
+import Venus from "./assets/clients/Venus.png";
+import colgate from "./assets/clients/colgate.png";
+import fossil from "./assets/clients/fossil.png";
+import growel from "./assets/clients/growel.png";
+import wipro from "./assets/clients/wipro.png";
+import Abhinav from "./assets/clients/Abhinav.png";
+import Ancorotti from "./assets/clients/Ancorotti.png";
+import NHPC from "./assets/clients/NHPC.png";
+import SSF from "./assets/clients/SSF.png";
+import Sika from "./assets/clients/Sika.png";
+import Steelbird from "./assets/clients/Steelbird.png";
 import cctvProduct from "./assets/cctv-product.png";
 import telecomProduct from "./assets/telecom-product.png";
 import accessProduct from "./assets/access-product.png";
@@ -419,11 +430,69 @@ export default function App() {
   </div>
 </section>
 
-      {/* CLIENTS */}
-      <section style={{ padding: "50px", textAlign: "center" }}>
-        <h2>Our Clients</h2>
-        <p>1000+ Happy Customers Across India</p>
-      </section>
+     {/* CLIENTS */}
+<section
+  style={{
+    padding: "70px 0",
+    background: "#f8fafc",
+    overflow: "hidden"
+  }}
+>
+
+  <h2
+    style={{
+      textAlign: "center",
+      marginBottom: "50px",
+      fontSize: "34px",
+      color: "#0f172a"
+    }}
+  >
+    Trusted By
+  </h2>
+
+  <div
+    style={{
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      position: "relative"
+    }}
+  >
+
+    <div
+      style={{
+        display: "inline-flex",
+        gap: "80px",
+        animation: "scroll 20s linear infinite"
+      }}
+    >
+
+      {[Venus, colgate, Fossil, growel, wipro, abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird, 
+        Venus, colgate, Fossil, growel, wipro, abhinav, Ancorotti, NHPC, SSF, Sika, Steelbird,].map((logo, i) => (
+
+        <img
+          key={i}
+          src={logo}
+          style={{
+            height: "80px",
+            width: "auto",
+            objectFit: "contain",
+            filter: "grayscale(100%)",
+            transition: "0.3s"
+          }}
+          onMouseOver={e => {
+            e.currentTarget.style.filter = "grayscale(0%)";
+            e.currentTarget.style.transform = "scale(1.08)";
+          }}
+          onMouseOut={e => {
+            e.currentTarget.style.filter = "grayscale(100%)";
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+        />
+      ))}
+
+    </div>
+  </div>
+</section>
 
       {/* WHY US */}
       <section style={{ padding: "50px", background: "white" }}>
@@ -466,7 +535,19 @@ export default function App() {
           © RAB INDIA
         </p>
       </footer>
+      <style>
+{`
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
 
+  to {
+    transform: translateX(-50%);
+  }
+}
+`}
+</style>
     </div>
   );
 }
