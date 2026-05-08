@@ -681,8 +681,9 @@ export default function App() {
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-      gap: "70px",
+      gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr 1fr",
+alignItems: "start",
+      gap: "40px",
       marginBottom: "50px"
     }}
   >
