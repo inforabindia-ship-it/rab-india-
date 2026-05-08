@@ -1,3 +1,9 @@
+import cctvProduct from "./assets/cctv-product.png";
+import telecomProduct from "./assets/telecom-product.png";
+import accessProduct from "./assets/access-product.png";
+import conferenceProduct from "./assets/conference-product.png";
+import weighingProduct from "./assets/weighing-product.png";
+import doorProduct from "./assets/door-product.png";
 import networking from "./assets/networking.png";
 import telecom from "./assets/telecom.png";
 import cctv from "./assets/cctv.png";
@@ -184,18 +190,247 @@ export default function App() {
 </section>
 
       {/* PRODUCTS */}
-      <section style={{ padding: "50px", background: "white", textAlign: "center" }}>
-        <h2>Our Products</h2>
+<section
+  style={{
+    padding: "80px 40px",
+    background: "#ffffff",
+    textAlign: "center"
+  }}
+>
+  <h2
+    style={{
+      fontSize: "36px",
+      marginBottom: "15px",
+      color: "#0f172a"
+    }}
+  >
+    Our Products
+  </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "20px", marginTop: "30px" }}>
-          <div>CCTV</div>
-          <div>Telecom Solution</div>
-          <div>Biometric & Access Control</div>
-          <div>Door Interlocking</div>
-          <div>Weighing Scale</div>
-          <div>Conference Room Solution</div>
-        </div>
-      </section>
+  <p style={{ color: "#64748b", marginBottom: "50px" }}>
+    Advanced telecom & security solutions for modern businesses
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: "30px"
+    }}
+  >
+
+    {/* CARD 1 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={cctvProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>CCTV Surveillance</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Advanced HD security camera systems for complete monitoring.
+        </p>
+      </div>
+    </div>
+
+    {/* CARD 2 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={telecomProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>Telecom Solutions</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Reliable telecom infrastructure and networking systems.
+        </p>
+      </div>
+    </div>
+
+    {/* CARD 3 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={accessProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>Access Control</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Smart biometric & access control systems for businesses.
+        </p>
+      </div>
+    </div>
+
+    {/* CARD 4 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={conferenceProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>Conference Room Solutions</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Professional audio & video conference room setup solutions.
+        </p>
+      </div>
+    </div>
+
+    {/* CARD 5 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={weighingProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>Weighing Scale</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Industrial and commercial weighing scale solutions.
+        </p>
+      </div>
+    </div>
+
+    {/* CARD 6 */}
+    <div
+      style={{
+        background: "white",
+        borderRadius: "15px",
+        overflow: "hidden",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s",
+        cursor: "pointer"
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.transform = "translateY(0px)";
+      }}
+    >
+      <img
+        src={doorProduct}
+        style={{
+          width: "100%",
+          height: "220px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "25px" }}>
+        <h3>Door Interlocking</h3>
+
+        <p style={{ color: "#64748b", fontSize: "15px" }}>
+          Smart door interlocking and security management systems.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* CLIENTS */}
       <section style={{ padding: "50px", textAlign: "center" }}>
