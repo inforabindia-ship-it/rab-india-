@@ -732,15 +732,39 @@ alignItems: "start",
         Home
       </p>
 
-      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
+      <p style={{
+    color: "#cbd5e1",
+    marginBottom: "12px",
+    cursor: "pointer",
+    transition: "0.3s"
+  }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "#cbd5e1"}
+>
         Products
       </p>
 
-      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
+      <p style={{
+    color: "#cbd5e1",
+    marginBottom: "12px",
+    cursor: "pointer",
+    transition: "0.3s"
+  }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "#cbd5e1"}
+>
         About Us
       </p>
 
-      <p style={{ color: "#cbd5e1", : "12px", cursor: "pointer" }}>
+      <p style={{
+    color: "#cbd5e1",
+    marginBottom: "12px",
+    cursor: "pointer",
+    transition: "0.3s"
+  }}
+  onMouseOver={e => e.target.style.color = "#2563eb"}
+  onMouseOut={e => e.target.style.color = "#cbd5e1"}
+>
         Contact
       </p>
 
@@ -755,8 +779,8 @@ alignItems: "start",
 
   <iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.2990162421393!2d76.79660137439747!3d30.934212275869584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff56ca4b46b11%3A0xacf64d1a97f3a73b!2sRAB%20India!5e0!3m2!1sen!2sin!4v1778243011746!5m2!1sen!2sin"
-  width="280"
-  height="180"
+  width="220"
+  height="150"
   style={{
     border: "0",
     borderRadius: "12px"
