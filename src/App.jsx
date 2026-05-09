@@ -696,7 +696,7 @@ alignItems: "start",
         alt="RAB INDIA"
         style={{
           height: "85px",
-          : "20px"
+          marginBottom: "20px"
         }}
       />
 
@@ -722,7 +722,7 @@ alignItems: "start",
       <p  
         style={{
     color: "#cbd5e1",
-    : "12px",
+    marginBottom: "12px",
     cursor: "pointer",
     transition: "0.3s"
   }}
