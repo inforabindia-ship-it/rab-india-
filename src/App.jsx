@@ -684,7 +684,7 @@ export default function App() {
       gridTemplateColumns: "1.5fr 1fr 1.2fr 1fr",
 alignItems: "start",
       gap: "40px",
-      : "50px"
+      marginBottom: "50px"
     }}
   >
 
@@ -715,7 +715,7 @@ alignItems: "start",
     {/* QUICK LINKS */}
     <div>
 
-      <h3 style={{ : "25px" }}>
+      <h3 style={{ marginBottom: "25px" }}>
         Quick Links
       </h3>
 
