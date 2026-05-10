@@ -92,7 +92,7 @@ export default function About() {
       <main>
         <section className="hero section">
           <div className="container hero-grid reveal">
-            <div>
+            <div className="hero-copy">
               <span className="hero-tag">About RAB India</span>
               <h1>Building Secure Industrial Futures Through Technology and Trust</h1>
               <p>

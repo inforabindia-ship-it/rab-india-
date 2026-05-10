@@ -221,7 +221,7 @@ export default function App() {
       <main id="home">
         <section className="hero section">
           <div className="container hero-grid reveal">
-            <div>
+            <div className="hero-copy">
               <span className="hero-tag">Future-Ready Industrial Security</span>
               <h1>
                 Premium Security Engineering for High-Performance Industrial Environments

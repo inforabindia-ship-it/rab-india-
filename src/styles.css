@@ -231,14 +231,20 @@ img {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 2rem;
-  align-items: center;
+  /* Top-align slideshow with headline — avoids “floating low” beside tall copy + stats */
+  align-items: start;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  font-size: clamp(1.48rem, 3.25vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .hero p {
@@ -249,8 +255,9 @@ img {
 
 .hero-tag {
   display: inline-block;
+  margin-bottom: 0.55rem;
   color: #8a6221;
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -262,6 +269,7 @@ img {
 }
 
 .hero-media {
+  align-self: start;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--line);
