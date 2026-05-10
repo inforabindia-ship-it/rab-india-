@@ -159,8 +159,6 @@ export default function About() {
           <img
             src={welcomeImg}
             style={{
-
-              width: "520px",
               width: "500px",
               borderRadius: "20px",
               boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
@@ -172,9 +170,8 @@ export default function About() {
 
             <h2
               style={{
-                fontSize: "46px",
-fontWeight: "700",
                 fontSize: "38px",
+                fontWeight: "700",
                 marginBottom: "25px",
                 color: "#0f172a"
               }}
@@ -320,7 +317,6 @@ fontWeight: "700",
       <section
         style={{
           padding: "90px 40px",
-          background: "linear-gradient(135deg,#020617,#0f172a,#1e293b)",
           background: "#0f172a",
           color: "white"
         }}
