@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
-import About from "./About";
+import About from "./about";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

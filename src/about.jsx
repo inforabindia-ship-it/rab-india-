@@ -1,5 +1,6 @@
 import logo from "./assets/logo.png";
 import welcomeImg from "./assets/welcome.png";
+
 import Venus from "./assets/clients/Venus.png";
 import colgate from "./assets/clients/colgate.png";
 import fossil from "./assets/clients/fossil.png";
@@ -135,7 +136,7 @@ export default function About() {
   </div>
 
 </section>
-
+     
       {/* COMPANY INTRO */}
       <section
         style={{
@@ -158,7 +159,9 @@ export default function About() {
           <img
             src={welcomeImg}
             style={{
+
               width: "520px",
+              width: "500px",
               borderRadius: "20px",
               boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
             }}
@@ -171,6 +174,7 @@ export default function About() {
               style={{
                 fontSize: "46px",
 fontWeight: "700",
+                fontSize: "38px",
                 marginBottom: "25px",
                 color: "#0f172a"
               }}
@@ -208,6 +212,7 @@ fontWeight: "700",
       </section>
 
       {/* VISION MISSION */}
+      {/* MISSION VISION */}
       <section
         style={{
           padding: "90px 40px",
@@ -226,7 +231,7 @@ fontWeight: "700",
         >
 
           {/* MISSION */}
-          <div
+        <div
   style={{
     background: "white",
     padding: "45px",
@@ -316,6 +321,7 @@ fontWeight: "700",
         style={{
           padding: "90px 40px",
           background: "linear-gradient(135deg,#020617,#0f172a,#1e293b)",
+          background: "#0f172a",
           color: "white"
         }}
       >
@@ -323,7 +329,7 @@ fontWeight: "700",
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4,1fr)",
+          gridTemplateColumns: "repeat(4,1fr)",
             gap: "40px",
             textAlign: "center",
             maxWidth: "1200px",
@@ -337,6 +343,7 @@ fontWeight: "700",
           </div>
 
           <div>
+
             <h2 style={{ fontSize: "42px" }}>1000+</h2>
             <p style={{ color: "#cbd5e1" }}>Happy Clients</p>
           </div>
@@ -347,13 +354,14 @@ fontWeight: "700",
           </div>
 
           <div>
-            <h2 style={{ fontSize: "42px" }}>300+</h2>
+            <h2 style={{ fontSize: "48px" }}>100+</h2>
             <p style={{ color: "#cbd5e1" }}>Projects Delivered</p>
           </div>
 
         </div>
 
       </section>
+
       {/* CLIENTS */}
       <section
         style={{
