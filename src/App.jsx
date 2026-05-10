@@ -110,8 +110,6 @@ const certifications = [
 ];
 
 const serviceHighlights = [
-  "Digital Grounding Devices",
-  "Lightning Protection Solutions",
   "Telecom Solutions",
   "CCTV Solutions",
   "Biometric & Access Control",
