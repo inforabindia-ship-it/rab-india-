@@ -1,3 +1,21 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "./assets/logo.png";
+import welcomeImg from "./assets/welcome.png";
+import networking from "./assets/networking.png";
+import telecom from "./assets/telecom.png";
+import cctv from "./assets/cctv.png";
+import conference from "./assets/conference.png";
+import weighing from "./assets/weighing.png";
+import fire from "./assets/fire.png";
+import access from "./assets/access.png";
+import interlocking from "./assets/interlocking.png";
+import cctvProduct from "./assets/cctv-product.png";
+import telecomProduct from "./assets/telecom-product.png";
+import accessProduct from "./assets/access-product.png";
+import conferenceProduct from "./assets/conference-product.png";
+import weighingProduct from "./assets/weighing-product.png";
+import doorProduct from "./assets/door-product.png";
 import Venus from "./assets/clients/Venus.png";
 import colgate from "./assets/clients/colgate.png";
 import fossil from "./assets/clients/fossil.png";
@@ -9,851 +27,445 @@ import NHPC from "./assets/clients/NHPC.png";
 import SSF from "./assets/clients/SSF.png";
 import Sika from "./assets/clients/Sika.png";
 import Steelbird from "./assets/clients/Steelbird.png";
-import cctvProduct from "./assets/cctv-product.png";
-import telecomProduct from "./assets/telecom-product.png";
-import accessProduct from "./assets/access-product.png";
-import conferenceProduct from "./assets/conference-product.png";
-import weighingProduct from "./assets/weighing-product.png";
-import doorProduct from "./assets/door-product.png";
-import networking from "./assets/networking.png";
-import telecom from "./assets/telecom.png";
-import cctv from "./assets/cctv.png";
-import conference from "./assets/conference.png";
-import weighing from "./assets/weighing.png";
-import fire from "./assets/fire.png";
-import access from "./assets/access.png";
-import interlocking from "./assets/interlocking.png";
-import logo from "./assets/logo.png";
-import welcomeImg from "./assets/welcome.png";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
+const navLinks = [
+  { to: "#about", label: "About" },
+  { to: "#industries", label: "Industries" },
+  { to: "#contact", label: "Contact" }
+];
+
+const solutions = [
+  {
+    title: "CCTV Surveillance",
+    description: "AI-assisted monitoring and forensic-ready recording infrastructure.",
+    image: cctvProduct
+  },
+  {
+    title: "Telecom & Networking",
+    description: "Reliable industrial connectivity and structured network backbone.",
+    image: telecomProduct
+  },
+  {
+    title: "Access Control",
+    description: "Biometric, RFID and smart entry architecture for secure operations.",
+    image: accessProduct
+  },
+  {
+    title: "Command & Conference Systems",
+    description: "High-clarity audio/video systems for plant-level collaboration.",
+    image: conferenceProduct
+  },
+  {
+    title: "Industrial Weighing Solutions",
+    description: "Connected weighing systems with compliance and reporting support.",
+    image: weighingProduct
+  },
+  {
+    title: "Door Interlocking Systems",
+    description: "Fail-safe door orchestration for controlled critical zones.",
+    image: doorProduct
+  }
+];
+
+const industries = [
+  "Manufacturing Plants",
+  "Warehousing & Logistics",
+  "Pharma & Process Industries",
+  "Commercial Campuses",
+  "Data & Control Rooms",
+  "Power & Utility Sites"
+];
+
+const productCategories = [
+  { name: "Smart Surveillance", image: cctv },
+  { name: "Industrial Networking", image: networking },
+  { name: "Enterprise Telecom", image: telecom },
+  { name: "Fire & Safety Monitoring", image: fire },
+  { name: "Access Management", image: access },
+  { name: "Interlocking Automation", image: interlocking },
+  { name: "Conference Tech", image: conference },
+  { name: "Weighing Automation", image: weighing }
+];
+
+const trustLogos = [
+  Venus,
+  colgate,
+  fossil,
+  growel,
+  wipro,
+  Abhinav,
+  Ancorotti,
+  NHPC,
+  SSF,
+  Sika,
+  Steelbird
+];
+
+const certifications = [
+  "ISO-Driven Quality Practices",
+  "Industry Safety Compliance Alignment",
+  "Structured Installation Protocols",
+  "Professional Support & AMC Ready"
+];
+
+const serviceHighlights = [
+  "Digital Grounding Devices",
+  "Lightning Protection Solutions",
+  "Telecom Solutions",
+  "CCTV Solutions",
+  "Biometric & Access Control",
+  "Networking Solutions"
+];
+
+const testimonials = [
+  {
+    quote:
+      "RAB India delivered a structured surveillance and access setup for our plant with excellent support quality.",
+    author: "IT Head, Industrial Client"
+  },
+  {
+    quote:
+      "Their team understood our operational risks and implemented the right mix of networking and security controls.",
+    author: "Operations Manager, Manufacturing Unit"
+  },
+  {
+    quote:
+      "From consultation to deployment, every stage felt professional, transparent, and focused on long-term reliability.",
+    author: "Facility Director, Commercial Campus"
+  }
+];
 
 export default function App() {
-
-  // Simple slider
-  const images = [
-    networking,
-  telecom,
-  cctv,
-  conference,
-  weighing,
-  access,
-  interlocking,
-  fire
-  ];
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div style={{ fontFamily: "Poppins,sans-serif", background: "#f8fafc" }}>
-
-     {/* HEADER */}
-<div
-  style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "20px 50px",
-    background: "white",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  }}
->
-
-  {/* LEFT: LOGO + NAME */}
-<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-
-  <img
-    src={logo}
-    alt="RAB INDIA"
-    style={{
-      height: "80px",
-      marginRight: "20px",
-      objectFit: "contain"
-    }}
-  />
-
-  <div>
-    <h2 style={{ margin: 0 }}>RAB INDIA</h2>
-    <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
-      Build on trust, Driven by quality
-    </p>
-  </div>
-
-</div>
-
-  {/* RIGHT: NAVBAR */}
-<div> 
-    <a style={{ margin: "0 15px", cursor: "pointer" }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "black"}>Home</a>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "black"}>Products</a>
-    <Link
-  to="/about"
-  style={{
-    margin: "0 15px",
-    cursor: "pointer",
-    textDecoration: "none",
-    color: "black"
-  }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "black"}
->
-  About
-</Link>
-    <a style={{ margin: "0 15px", cursor: "pointer" }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "black"}>Contact</a>
-  </div>
- </div>
-
-      {/* SLIDER */}
-<div style={{ 
-  width: "100%", 
-  height: "500px",
-  overflow: "hidden"
-}}>
-  <img 
-    src={images[index]} 
-    style={{ 
-      width: "100%", 
-      height: "100%", 
-      objectFit: "cover"
-    }} 
-  />
-</div>
-
-{/* CTA BELOW SLIDER (STICKED) */}
-<div style={{ 
-  textAlign: "center",
-  marginTop: "-25px",   
-  marginBottom: "30px",
-  position: "relative",
-  zIndex: 10
-}}>
-  <button 
-    style={{ 
-      padding: "12px 30px", 
-      background: "#2563eb", 
-      color: "white", 
-      border: "none",
-      borderRadius: "8px",
-      fontSize: "16px",
-      cursor: "pointer",
-      boxShadow: "0 6px 20px rgba(0,0,0,0.15)"
-    }}
-  >
-    Get Quote
-  </button>
-</div>
-
-      {/* WELCOME */}
-<section style={{ padding: "80px 20px", background: "#f1f5f9" }}>
-
-  <div style={{ 
-    display: "flex", 
-    flexWrap: "wrap", 
-    alignItems: "center", 
-    justifyContent: "center", 
-    lineHeight: "1.6",
-    gap: "80px" 
-  }}>
-
-    {/* LEFT IMAGE */}
-    <img 
-  src={welcomeImg} 
-  style={{ 
-  width: "500px", 
-  borderRadius: "10px",
-  boxShadow: "0 5px 15px rgba(0,0,0,0.15)"
-}} 
-/>
-
-    {/* RIGHT TEXT */}
-    <div style={{ maxWidth: "500px" }}>
-      <h2 style={{ fontSize: "28px", marginBottom: "20px" }}>
-  Welcome to RAB INDIA
-</h2>
-
-      <p>
-        Founded in the year 2016 by Mr. Rahul Goyal, RAB INDIA offers telecom and security solutions to customers all over India. With more than 1000+ customers only in the north region of India, renowned clients trust and rely on RAB INDIA for advanced security and IT solutions.
-      </p>
-
-     <button 
-  style={{ 
-    marginTop: "20px", 
-    padding: "12px 25px", 
-    background: "#2563eb", 
-    color: "white", 
-    border: "none",
-    borderRadius: "6px",
-    cursor: "pointer"
-  }}
-  onMouseOver={e => e.target.style.background = "#1d4ed8"}
-  onMouseOut={e => e.target.style.background = "#2563eb"}
->
-  Read More
-</button>
-    </div>
-
-  </div>
-
-</section>
-
-      {/* PRODUCTS */}
-<section
-  style={{
-    padding: "80px 40px",
-    background: "#ffffff",
-    textAlign: "center"
-  }}
->  
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(3, 1fr)",
-      gap: "30px"
-    }}
-  >
-
-    {/* CARD 1 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={cctvProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>CCTV Surveillance</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Advanced HD security camera systems for complete monitoring.
-        </p>
+    <div className="site-root">
+      <div className="topbar">
+        <div className="container topbar-inner">
+          <span>Mon-Sat 9:30 AM - 6:30 PM</span>
+          <div>
+            <a href="tel:+917814421210">Call: +91 7814421210</a>
+            <span>|</span>
+            <a href="mailto:info@rabindia.co.in">Email: info@rabindia.co.in</a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* CARD 2 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={telecomProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>Telecom Solutions</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Reliable telecom infrastructure and networking systems.
-        </p>
-      </div>
-    </div>
-
-    {/* CARD 3 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={accessProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>Access Control</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Smart biometric & access control systems for businesses.
-        </p>
-      </div>
-    </div>
-
-    {/* CARD 4 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={conferenceProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>Conference Room Solutions</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Professional audio & video conference room setup solutions.
-        </p>
-      </div>
-    </div>
-
-    {/* CARD 5 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={weighingProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>Weighing Scale</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Industrial and commercial weighing scale solutions.
-        </p>
-      </div>
-    </div>
-
-    {/* CARD 6 */}
-    <div
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-        transition: "0.3s",
-        cursor: "pointer"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <img
-        src={doorProduct}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover"
-        }}
-      />
-
-      <div style={{ padding: "25px" }}>
-        <h3>Door Interlocking</h3>
-
-        <p style={{ color: "#64748b", fontSize: "15px" }}>
-          Smart door interlocking and security management systems.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-     {/* CLIENTS */}
-<section
-  style={{
-    padding: "70px 0",
-    background: "white",
-    overflow: "hidden"
-  }}
->
-
-  <h2
-    style={{
-      textAlign: "center",
-      marginBottom: "50px",
-      fontSize: "34px",
-      color: "#0f172a"
-    }}
-  >
-    Trusted By
-  </h2>
-
-  <div
-    style={{
-      overflow: "hidden",
-      whiteSpace: "nowrap",
-      position: "relative"
-    }}
-  >
-
-    <div
-      style={{
-        display: "inline-flex",
-        gap: "80px",
-        animation: "scroll 20s linear infinite"
-      }}
-    >
-
-     {[
-  Venus,
-  colgate,
-  fossil,
-  growel,
-  wipro,
-  Abhinav,
-  Ancorotti,
-  NHPC,
-  SSF,
-  Sika,
-  Steelbird,
-
-  Venus,
-  colgate,
-  fossil,
-  growel,
-  wipro,
-  Abhinav,
-  Ancorotti,
-  NHPC,
-  SSF,
-  Sika,
-  Steelbird,
-].map((logo, i) => (
-
-        <img
-          key={i}
-          src={logo}
-          style={{
-            height: "80px",
-            width: "auto",
-            objectFit: "contain",
-            transition: "0.3s"
-          }}
-          onMouseOver={e => {
-            e.currentTarget.style.transform = "scale(1.08)";
-          }}
-          onMouseOut={e => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
-        />
-      ))}
-
-    </div>
-  </div>
-</section>
-
-      {/* WHY US */}
-<section
-  style={{
-    padding: "90px 40px",
-    background: "#f8fafc"
-  }}
->
-
-  <div style={{ textAlign: "center", marginBottom: "60px" }}>
-    <h2
-      style={{
-        fontSize: "38px",
-        color: "#0f172a",
-        marginBottom: "15px"
-      }}
-    >
-      Why Choose RAB INDIA
-    </h2>
-
-    <p
-      style={{
-        color: "#64748b",
-        fontSize: "17px"
-      }}
-    >
-      Delivering trusted telecom & security solutions across India
-    </p>
-  </div>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-      gap: "30px",
-      maxWidth: "1200px",
-      margin: "auto"
-    }}
-  >
-
-    {/* BOX 1 */}
-    <div
-      style={{
-        background: "white",
-        padding: "35px",
-        borderRadius: "18px",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
-        transition: "0.3s",
-        textAlign: "center"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🏆</div>
-
-      <h3 style={{ marginBottom: "15px" }}>
-        Industry Experience
-      </h3>
-
-      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
-        Serving clients across India since 2016 with trusted solutions.
-      </p>
-    </div>
-
-    {/* BOX 2 */}
-    <div
-      style={{
-        background: "white",
-        padding: "35px",
-        borderRadius: "18px",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
-        transition: "0.3s",
-        textAlign: "center"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🛠️</div>
-
-      <h3 style={{ marginBottom: "15px" }}>
-        Technical Experts
-      </h3>
-
-      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
-        Skilled professionals delivering quality installations & support.
-      </p>
-    </div>
-
-    {/* BOX 3 */}
-    <div
-      style={{
-        background: "white",
-        padding: "35px",
-        borderRadius: "18px",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
-        transition: "0.3s",
-        textAlign: "center"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <div style={{ fontSize: "45px", marginBottom: "20px" }}>⚡</div>
-
-      <h3 style={{ marginBottom: "15px" }}>
-        Fast Support
-      </h3>
-
-      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
-        Quick response and reliable after-sales technical assistance.
-      </p>
-    </div>
-
-    {/* BOX 4 */}
-    <div
-      style={{
-        background: "white",
-        padding: "35px",
-        borderRadius: "18px",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.06)",
-        transition: "0.3s",
-        textAlign: "center"
-      }}
-      onMouseOver={e => {
-        e.currentTarget.style.transform = "translateY(-8px)";
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.transform = "translateY(0px)";
-      }}
-    >
-      <div style={{ fontSize: "45px", marginBottom: "20px" }}>🤝</div>
-
-      <h3 style={{ marginBottom: "15px" }}>
-        Customer Trust
-      </h3>
-
-      <p style={{ color: "#64748b", lineHeight: "1.7" }}>
-        Trusted by 1000+ customers for quality and long-term partnerships.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-     {/* FOOTER */}
-<footer
-  style={{
-    background: "#0f172a",
-    color: "white",
-    padding: "55px 50px 25px"
-  }}
->
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "1.5fr 1fr 1.2fr 1fr",
-alignItems: "start",
-      gap: "40px",
-      marginBottom: "50px"
-    }}
-  >
-
-    {/* COMPANY */}
-    <div>
-
-      <img
-        src={logo}
-        alt="RAB INDIA"
-        style={{
-          height: "85px",
-          marginBottom: "20px"
-        }}
-      />
-
-      <p
-        style={{
-          color: "#cbd5e1",
-          lineHeight: "1.8"
-        }}
-      >
-        RAB INDIA delivers advanced telecom, networking and security
-        solutions across India with trusted service and technical expertise.
-      </p>
-
-    </div>
-
-    {/* QUICK LINKS */}
-    <div>
-
-      <h3 style={{ marginBottom: "25px" }}>
-        Quick Links
-      </h3>
-
-      <p  
-        style={{
-    color: "#cbd5e1",
-    marginBottom: "12px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "#cbd5e1"}
->
-        Home
-      </p>
-
-      <p style={{
-    color: "#cbd5e1",
-    marginBottom: "12px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "#cbd5e1"}
->
-        Products
-      </p>
-
-      <p style={{
-    color: "#cbd5e1",
-    marginBottom: "12px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "#cbd5e1"}
->
-        About Us
-      </p>
-
-      <p style={{
-    color: "#cbd5e1",
-    marginBottom: "12px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
-  onMouseOver={e => e.target.style.color = "#2563eb"}
-  onMouseOut={e => e.target.style.color = "#cbd5e1"}
->
-        Contact
-      </p>
-
-    </div>
-
-    {/* MAP */}
-<div>
-
-  <h3 style={{ marginBottom: "25px" }}>
-    Our Location
-  </h3>
-
-  <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.2990162421393!2d76.79660137439747!3d30.934212275869584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff56ca4b46b11%3A0xacf64d1a97f3a73b!2sRAB%20India!5e0!3m2!1sen!2sin!4v1778243011746!5m2!1sen!2sin"
-  width="220"
-  height="150"
-  style={{
-    border: "0",
-    borderRadius: "12px"
-  }}
-  allowFullScreen=""
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-></iframe>
-
-</div>
-    
-    {/* CONTACT */}
-    <div>
-
-      <h3 style={{ marginBottom: "25px" }}>
-        Contact Us
-      </h3>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        📍 Baddi, Himachal Pradesh
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        📞 +91 7814421210
-      </p>
-
-      <p style={{ color: "#cbd5e1", marginBottom: "15px" }}>
-        ✉ info@rabindia.co.in
-      </p>
-
-    </div>
-
-  </div>
-
-  {/* BOTTOM */}
-  <div
-    style={{
-      borderTop: "1px solid #1e293b",
-      paddingTop: "25px",
-      textAlign: "center",
-      color: "#94a3b8",
-      fontSize: "14px"
-    }}
-  >
-    © 2025 RAB INDIA. All Rights Reserved.
-  </div>
-
-</footer>
-      <style>
-{`
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-`}
-</style>
-      
+      <header className="navbar">
+        <div className="container nav-inner">
+          <Link className="brand" to="/">
+            <img src={logo} alt="RAB India logo" />
+            <div>
+              <h2 className="brand-title">RAB INDIA</h2>
+            </div>
+          </Link>
+
+          <button
+            className="menu-toggle"
+            aria-label="Toggle menu"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? "X" : "≡"}
+          </button>
+
+          <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <a href="#home" onClick={() => setMenuOpen(false)}>
+              Home
+            </a>
+            <div className="dropdown">
+              <button type="button">Solutions ▾</button>
+              <div className="dropdown-menu">
+                <a href="#solutions">Core Solutions</a>
+                <a href="#products">Product Categories</a>
+                <a href="#certifications">Certifications</a>
+              </div>
+            </div>
+            {navLinks.map((item) => (
+              <a key={item.label} href={item.to} onClick={() => setMenuOpen(false)}>
+                {item.label}
+              </a>
+            ))}
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              Company
+            </Link>
+            <a href="#contact" className="button button-secondary" onClick={() => setMenuOpen(false)}>
+              Request Consultation
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="home">
+        <section className="hero section">
+          <div className="container hero-grid reveal">
+            <div>
+              <span className="hero-tag">Future-Ready Industrial Security</span>
+              <h1>
+                Premium Security Engineering for High-Performance Industrial Environments
+              </h1>
+              <p>
+                RAB India designs and deploys advanced surveillance, access control, networking,
+                and safety infrastructure for factories, warehouses, plants, and commercial
+                campuses. We combine reliability, precision, and enterprise-grade support.
+              </p>
+              <div className="hero-actions">
+                <a href="#contact" className="button button-primary">
+                  Get a Site Security Audit
+                </a>
+                <a href="#solutions" className="button button-secondary">
+                  Explore Solutions
+                </a>
+              </div>
+              <div className="floating-stats">
+                <div>
+                  <h4>1000+</h4>
+                  <p>B2B Clients Supported</p>
+                </div>
+                <div>
+                  <h4>9+ Years</h4>
+                  <p>Security Expertise</p>
+                </div>
+                <div>
+                  <h4>24/7</h4>
+                  <p>Technical Response</p>
+                </div>
+              </div>
+            </div>
+            <div className="hero-media">
+              <img src={networking} alt="Industrial networking and surveillance control" />
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-tight">
+          <div className="container reveal">
+            <div className="service-pills">
+              {serviceHighlights.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="about">
+          <div className="container about-band reveal">
+            <div className="about-band-grid">
+              <img src={welcomeImg} alt="RAB India operations and engineering team" />
+              <div>
+                <div className="section-head">
+                  <h2>About RAB India</h2>
+                  <p>
+                    Established in 2016, RAB India delivers industrial-grade security architecture
+                    and operational support for organizations where uptime, visibility, and control
+                    are mission critical.
+                  </p>
+                </div>
+                <ul className="list">
+                  <li>End-to-end planning, deployment, integration, and lifecycle support.</li>
+                  <li>Balanced approach to physical security and digital security readiness.</li>
+                  <li>Built for durability, scalability, and compliance-focused operations.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="solutions">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Our Security Solutions</h2>
+              <p>
+                Engineered systems for complex industrial and commercial environments, optimized
+                for reliability, scale, and operational intelligence.
+              </p>
+            </div>
+            <div className="grid-3">
+              {solutions.map((item) => (
+                <article className="card" key={item.title}>
+                  <div className="card-media">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                  <div className="card-body">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="industries">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Industries We Serve</h2>
+              <p>
+                Security and infrastructure solutions tailored to risk profile, operations flow,
+                and compliance requirements of each business domain.
+              </p>
+            </div>
+            <div className="grid-3">
+              {industries.map((industry) => (
+                <article className="card" key={industry}>
+                  <div className="card-body">
+                    <h3>{industry}</h3>
+                    <p>
+                      Customized deployment blueprint with site-specific monitoring, access
+                      governance, and security control layers.
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="products">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Product Categories</h2>
+              <p>
+                Modern, high-performance systems selected for quality, serviceability, and
+                enterprise integration readiness.
+              </p>
+            </div>
+            <div className="grid-4">
+              {productCategories.map((item) => (
+                <article className="card" key={item.name}>
+                  <div className="card-media">
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <div className="card-body">
+                    <h3>{item.name}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Trusted by Leading Brands</h2>
+              <p>
+                Proven execution and long-term support for reputed businesses and institutions.
+              </p>
+            </div>
+            <div className="logo-strip">
+              <div className="logo-track">
+                {[...trustLogos, ...trustLogos].map((item, index) => (
+                  <div className="logo-chip" key={`${index}-${item}`}>
+                    <img src={item} alt="Trusted client logo" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Why Choose RAB India</h2>
+            </div>
+            <div className="grid-4">
+              <article className="metric">
+                <h3>1000+</h3>
+                <p>Clients secured across industrial and commercial sectors.</p>
+              </article>
+              <article className="metric">
+                <h3>9+</h3>
+                <p>Years of continuous on-ground implementation experience.</p>
+              </article>
+              <article className="metric">
+                <h3>24/7</h3>
+                <p>Technical support readiness for mission-critical operations.</p>
+              </article>
+              <article className="metric">
+                <h3>100+</h3>
+                <p>Complex projects delivered with precision and quality controls.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Client Testimonials</h2>
+              <p>What industrial and enterprise clients say about our delivery standards.</p>
+            </div>
+            <div className="grid-3">
+              {testimonials.map((item) => (
+                <article className="card testimonial" key={item.author}>
+                  <div className="card-body">
+                    <p>{item.quote}</p>
+                    <p style={{ marginTop: "0.9rem", color: "#d5e3fb", fontWeight: 600 }}>
+                      {item.author}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="certifications">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Certifications & Quality Standards</h2>
+            </div>
+            <div className="grid-4">
+              {certifications.map((item) => (
+                <div className="cert-badge" key={item}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="contact">
+          <div className="container reveal contact">
+            <div className="panel contact-info">
+              <div className="section-head">
+                <h2>Contact & Inquiry</h2>
+                <p>
+                  Plan your next security upgrade with our technical team. We provide site
+                  assessment, architecture recommendations, and deployment roadmaps.
+                </p>
+              </div>
+              <p>Address: Baddi, Himachal Pradesh, India</p>
+              <p>Phone: +91 7814421210</p>
+              <p>Email: info@rabindia.co.in</p>
+              <div className="hero-actions">
+                <a href="tel:+917814421210" className="button button-primary">
+                  Call Now
+                </a>
+                <a href="mailto:info@rabindia.co.in" className="button button-secondary">
+                  Send Email
+                </a>
+              </div>
+            </div>
+            <div className="panel">
+              <iframe
+                className="map-frame"
+                title="RAB India Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.2990162421393!2d76.79660137439747!3d30.934212275869584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff56ca4b46b11%3A0xacf64d1a97f3a73b!2sRAB%20India!5e0!3m2!1sen!2sin!4v1778243011746!5m2!1sen!2sin"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          © {new Date().getFullYear()} RAB India. Built for secure, modern industrial operations.
+        </div>
+      </footer>
     </div>
   );
 }
