@@ -1,16 +1,16 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "functions": {
-    "api/**/*.ts": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  },
-  "redirects": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "source": "/:path*",
-      "destination": "/index.html"
+      "source": "/(.+)",
+      "destination": "/"
+    },
+    {
+      "source": "/",
+      "destination": "/"
     }
   ]
 }
