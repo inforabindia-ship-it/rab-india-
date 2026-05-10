@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./assets/logo.png";
 import welcomeImg from "./assets/welcome.png";
+import aboutBanner from "./assets/about-banner.jpg";
 import networking from "./assets/networking.png";
 import telecom from "./assets/telecom.png";
 import cctv from "./assets/cctv.png";
@@ -117,6 +118,21 @@ const serviceHighlights = [
   "Networking Solutions"
 ];
 
+/**
+ * Hero carousel — uses the same “product composite” art as your Solutions section
+ * plus welcome / about imagery so framing stays consistent and fills the frame cleanly.
+ */
+const heroSlides = [
+  { src: welcomeImg, alt: "RAB India — trusted security and telecom solutions" },
+  { src: aboutBanner, alt: "Industrial and commercial security project delivery" },
+  { src: cctvProduct, alt: "CCTV surveillance systems" },
+  { src: telecomProduct, alt: "Telecom and networking solutions" },
+  { src: accessProduct, alt: "Biometric and access control solutions" },
+  { src: conferenceProduct, alt: "Conference and collaboration systems" },
+  { src: weighingProduct, alt: "Industrial weighing solutions" },
+  { src: doorProduct, alt: "Door interlocking and secured access" }
+];
+
 const testimonials = [
   {
     quote:
@@ -137,6 +153,14 @@ const testimonials = [
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 3500);
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <div className="site-root">
@@ -231,7 +255,34 @@ export default function App() {
               </div>
             </div>
             <div className="hero-media">
-              <img src={networking} alt="Industrial networking and surveillance control" />
+              <div
+                className="hero-slideshow"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Industrial security highlights"
+              >
+                {heroSlides.map((slide, i) => (
+                  <img
+                    key={slide.alt}
+                    src={slide.src}
+                    alt={slide.alt}
+                    className={`hero-slide-img${i === heroIndex ? " is-active" : ""}`}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                ))}
+                <div className="hero-slide-dots" aria-hidden="true">
+                  {heroSlides.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={i === heroIndex ? "is-active" : ""}
+                      aria-label={`Show slide ${i + 1} of ${heroSlides.length}`}
+                      onClick={() => setHeroIndex(i)}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
