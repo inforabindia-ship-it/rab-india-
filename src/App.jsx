@@ -37,31 +37,37 @@ const navLinks = [
 
 const solutions = [
   {
+    id: "cctv",
     title: "CCTV Surveillance",
     description: "AI-assisted monitoring and forensic-ready recording infrastructure.",
     image: cctvProduct
   },
   {
-    title: "Telecom & Networking",
-    description: "Reliable industrial connectivity and structured network backbone.",
+    id: "telecom",
+    title: "Telecom Solutions",
+    description: "PBX, IP-PBX, and office communication systems for business calling.",
     image: telecomProduct
   },
   {
+    id: "access",
     title: "Access Control",
     description: "Biometric, RFID and smart entry architecture for secure operations.",
     image: accessProduct
   },
   {
+    id: "conference",
     title: "Command & Conference Systems",
     description: "High-clarity audio/video systems for plant-level collaboration.",
     image: conferenceProduct
   },
   {
+    id: "weighing",
     title: "Industrial Weighing Solutions",
     description: "Connected weighing systems with compliance and reporting support.",
     image: weighingProduct
   },
   {
+    id: "door",
     title: "Door Interlocking Systems",
     description: "Fail-safe door orchestration for controlled critical zones.",
     image: doorProduct
@@ -78,14 +84,14 @@ const industries = [
 ];
 
 const productCategories = [
-  { name: "Smart Surveillance", image: cctv },
-  { name: "Industrial Networking", image: networking },
-  { name: "Enterprise Telecom", image: telecom },
-  { name: "Fire & Safety Monitoring", image: fire },
-  { name: "Access Management", image: access },
-  { name: "Interlocking Automation", image: interlocking },
-  { name: "Conference Tech", image: conference },
-  { name: "Weighing Automation", image: weighing }
+  { name: "Smart Surveillance", image: cctv, detailId: "cctv" },
+  { name: "Industrial Networking", image: networking, detailId: "networking" },
+  { name: "Enterprise Telecom", image: telecom, detailId: "telecom" },
+  { name: "Fire & Safety Monitoring", image: fire, detailId: "fire" },
+  { name: "Access Management", image: access, detailId: "access" },
+  { name: "Interlocking Automation", image: interlocking, detailId: "door" },
+  { name: "Conference Tech", image: conference, detailId: "conference" },
+  { name: "Weighing Automation", image: weighing, detailId: "weighing" }
 ];
 
 const trustLogos = [
@@ -124,7 +130,7 @@ const heroSlides = [
   { src: welcomeImg, alt: "RAB India — trusted security and telecom solutions" },
   { src: aboutBanner, alt: "Industrial and commercial security project delivery" },
   { src: cctvProduct, alt: "CCTV surveillance systems" },
-  { src: telecomProduct, alt: "Telecom and networking solutions" },
+  { src: telecomProduct, alt: "Telecom solutions" },
   { src: accessProduct, alt: "Biometric and access control solutions" },
   { src: conferenceProduct, alt: "Conference and collaboration systems" },
   { src: weighingProduct, alt: "Industrial weighing solutions" },
@@ -329,15 +335,21 @@ export default function App() {
             </div>
             <div className="grid-3">
               {solutions.map((item) => (
-                <article className="card" key={item.title}>
+                <Link
+                  className="card card--interactive"
+                  key={item.id}
+                  to={`/product/${item.id}`}
+                  aria-label={`Open details: ${item.title}`}
+                >
                   <div className="card-media">
-                    <img src={item.image} alt={item.title} />
+                    <img src={item.image} alt="" />
                   </div>
                   <div className="card-body">
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
+                    <span className="card-hint">View details →</span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -379,14 +391,20 @@ export default function App() {
             </div>
             <div className="grid-4">
               {productCategories.map((item) => (
-                <article className="card" key={item.name}>
+                <Link
+                  className="card card--interactive"
+                  key={item.name}
+                  to={`/product/${item.detailId}`}
+                  aria-label={`Open details: ${item.name}`}
+                >
                   <div className="card-media">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.image} alt="" />
                   </div>
                   <div className="card-body">
                     <h3>{item.name}</h3>
+                    <span className="card-hint">View details →</span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
