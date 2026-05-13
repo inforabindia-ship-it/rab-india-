@@ -39,13 +39,13 @@ export default function ProductDetail() {
             <Link to="/" onClick={() => setMenuOpen(false)}>
               Home
             </Link>
-            <Link to="/#solutions" onClick={() => setMenuOpen(false)}>
+            <Link to={{ pathname: "/", hash: "solutions" }} onClick={() => setMenuOpen(false)}>
               Solutions
             </Link>
-            <Link to="/#products" onClick={() => setMenuOpen(false)}>
+            <Link to={{ pathname: "/", hash: "products" }} onClick={() => setMenuOpen(false)}>
               Products
             </Link>
-            <Link to="/#contact" onClick={() => setMenuOpen(false)}>
+            <Link to={{ pathname: "/", hash: "contact" }} onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
             <Link to="/about" onClick={() => setMenuOpen(false)}>
@@ -112,7 +112,7 @@ export default function ProductDetail() {
           ))}
 
           <div className="product-page-actions">
-            <Link to="/#contact" className="button button-primary">
+            <Link to={{ pathname: "/", hash: "contact" }} className="button button-primary">
               Request a quote
             </Link>
             <Link to="/" className="button button-secondary">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "./assets/logo.png";
 import welcomeImg from "./assets/welcome.png";
 import aboutBanner from "./assets/about-banner.jpg";
@@ -8,12 +8,11 @@ import telecom from "./assets/telecom.png";
 import cctv from "./assets/cctv.png";
 import conference from "./assets/conference.png";
 import weighing from "./assets/weighing.png";
-import fire from "./assets/fire.png";
-import access from "./assets/access.png";
+import fireSafetyBanner from "./assets/fire-safety-banner.png";
+import accessProduct from "./assets/access-product.png";
 import interlocking from "./assets/interlocking.png";
 import cctvProduct from "./assets/cctv-product.png";
 import telecomProduct from "./assets/telecom-product.png";
-import accessProduct from "./assets/access-product.png";
 import conferenceProduct from "./assets/conference-product.png";
 import weighingProduct from "./assets/weighing-product.png";
 import doorProduct from "./assets/door-product.png";
@@ -50,20 +49,23 @@ const solutions = [
   },
   {
     id: "access",
-    title: "Access Control",
-    description: "Biometric, RFID and smart entry architecture for secure operations.",
+    title: "Time Attendance & Access Control",
+    description:
+      "Attendance, door access, barriers, screening, baggage inspection, patrol verification, and hotel locks — integrated for daily operations.",
     image: accessProduct
   },
   {
     id: "conference",
-    title: "Command & Conference Systems",
-    description: "High-clarity audio/video systems for plant-level collaboration.",
+    title: "Conference Room Solution",
+    description:
+      "Cameras, interactive panels, digital podiums, and room audio—specified and commissioned for boardrooms, training halls, and hybrid collaboration.",
     image: conferenceProduct
   },
   {
     id: "weighing",
     title: "Industrial Weighing Solutions",
-    description: "Connected weighing systems with compliance and reporting support.",
+    description:
+      "Analytical balances, platform and tabletop scales, label printers, pallet units, piece counting, and load cells—specified, installed, and calibrated for your workflows.",
     image: weighingProduct
   },
   {
@@ -87,10 +89,10 @@ const productCategories = [
   { name: "Smart Surveillance", image: cctv, detailId: "cctv" },
   { name: "Industrial Networking", image: networking, detailId: "networking" },
   { name: "Enterprise Telecom", image: telecom, detailId: "telecom" },
-  { name: "Fire & Safety Monitoring", image: fire, detailId: "fire" },
-  { name: "Access Management", image: access, detailId: "access" },
+  { name: "Fire & Safety Monitoring", image: fireSafetyBanner, detailId: "fire" },
+  { name: "Time Attendance & Access Control", image: accessProduct, detailId: "access" },
   { name: "Interlocking Automation", image: interlocking, detailId: "door" },
-  { name: "Conference Tech", image: conference, detailId: "conference" },
+  { name: "Conference Room Solution", image: conference, detailId: "conference" },
   { name: "Weighing Automation", image: weighing, detailId: "weighing" }
 ];
 
@@ -115,13 +117,6 @@ const certifications = [
   "Professional Support & AMC Ready"
 ];
 
-const serviceHighlights = [
-  "Telecom Solutions",
-  "CCTV Solutions",
-  "Biometric & Access Control",
-  "Networking Solutions"
-];
-
 /**
  * Hero carousel — uses the same “product composite” art as your Solutions section
  * plus welcome / about imagery so framing stays consistent and fills the frame cleanly.
@@ -132,7 +127,7 @@ const heroSlides = [
   { src: cctvProduct, alt: "CCTV surveillance systems" },
   { src: telecomProduct, alt: "Telecom solutions" },
   { src: accessProduct, alt: "Biometric and access control solutions" },
-  { src: conferenceProduct, alt: "Conference and collaboration systems" },
+  { src: conferenceProduct, alt: "Conference Room audiovisual solutions" },
   { src: weighingProduct, alt: "Industrial weighing solutions" },
   { src: doorProduct, alt: "Door interlocking and secured access" }
 ];
@@ -158,6 +153,19 @@ const testimonials = [
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroIndex, setHeroIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+    const id = location.hash.replace(/^#/, "").trim();
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const timer = window.setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+    return () => window.clearTimeout(timer);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -287,16 +295,6 @@ export default function App() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-tight">
-          <div className="container reveal">
-            <div className="service-pills">
-              {serviceHighlights.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
             </div>
           </div>
         </section>

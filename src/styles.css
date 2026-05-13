@@ -217,10 +217,6 @@ img {
   padding: 5.5rem 0;
 }
 
-.section-tight {
-  padding: 1.1rem 0 0.9rem;
-}
-
 .hero {
   position: relative;
   overflow: hidden;
@@ -359,21 +355,6 @@ img {
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-.service-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.service-pills span {
-  border: 1px solid rgba(196, 138, 44, 0.28);
-  background: rgba(196, 138, 44, 0.08);
-  color: #7a5213;
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.86rem;
 }
 
 .section-head {
