@@ -1,62 +1,66 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, Navigate, useParams } from "react-router-dom";
+import SeoHead from "./seo/SeoHead";
+import JsonLd from "./seo/JsonLd";
+import SiteHeader from "./components/SiteHeader";
+import Breadcrumbs from "./components/Breadcrumbs";
 import { productDetails } from "./productDetails";
-import logo from "./assets/logo.png";
+import { SITE_ORIGIN } from "./seo/site";
+import { breadcrumbListNode, webPageNode, organizationNode } from "./seo/schemaBuilders";
 
 export default function ProductDetail() {
   const { productId } = useParams();
-  const [menuOpen, setMenuOpen] = useState(false);
   const detail = productId ? productDetails[productId] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [productId]);
 
+  const metaDescription = useMemo(() => {
+    if (!detail?.intro) return "";
+    const t = detail.intro.trim();
+    return t.length > 158 ? `${t.slice(0, 157)}…` : t;
+  }, [detail]);
+
   if (!detail) {
     return <Navigate to="/" replace />;
   }
 
+  const pathname = `/product/${productId}`;
+  const pageUrl = `${SITE_ORIGIN}${pathname}`;
+  const metaTitle = `${detail.title} — Solutions | RAB INDIA`;
+
+  const graph = [
+    organizationNode(),
+    webPageNode({
+      pathname,
+      name: metaTitle,
+      description: metaDescription
+    }),
+    breadcrumbListNode([
+      { name: "Home", url: `${SITE_ORIGIN}/` },
+      { name: detail.title, url: pageUrl }
+    ])
+  ];
+
   return (
     <div className="site-root">
-      <header className="navbar">
-        <div className="container nav-inner">
-          <Link className="brand" to="/">
-            <img src={logo} alt="RAB India logo" />
-            <div>
-              <h2 className="brand-title">RAB INDIA</h2>
-            </div>
-          </Link>
-
-          <button
-            className="menu-toggle"
-            aria-label="Toggle menu"
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            {menuOpen ? "X" : "≡"}
-          </button>
-
-          <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-            <Link to={{ pathname: "/", hash: "solutions" }} onClick={() => setMenuOpen(false)}>
-              Solutions
-            </Link>
-            <Link to={{ pathname: "/", hash: "products" }} onClick={() => setMenuOpen(false)}>
-              Products
-            </Link>
-            <Link to={{ pathname: "/", hash: "contact" }} onClick={() => setMenuOpen(false)}>
-              Contact
-            </Link>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>
-              Company
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SeoHead title={metaTitle} description={metaDescription} pathname={pathname} rawTitle />
+      <JsonLd id={`rab-jsonld-product-${productId}`} data={{ "@context": "https://schema.org", "@graph": graph }} />
+      <Helmet>
+        <link rel="preload" as="image" href={detail.image} fetchPriority="high" />
+      </Helmet>
+      <SiteHeader />
 
       <main className="section product-page">
         <div className="container product-page-inner">
+          <Breadcrumbs
+            items={[
+              { label: "Home", to: "/" },
+              { label: detail.title, to: pathname }
+            ]}
+          />
           <Link className="product-page-back" to="/">
             ← Back to home
           </Link>
@@ -65,7 +69,14 @@ export default function ProductDetail() {
           <p className="product-page-lead">{detail.intro}</p>
 
           <div className="product-page-hero-media">
-            <img src={detail.image} alt={detail.imageAlt || detail.title} />
+            <img
+              src={detail.image}
+              alt={detail.imageAlt || `${detail.title} — RAB INDIA industrial solution`}
+              width={960}
+              height={540}
+              decoding="async"
+              fetchPriority="high"
+            />
           </div>
 
           <section className="product-page-block">
@@ -90,7 +101,11 @@ export default function ProductDetail() {
                     <div className="product-feature-media">
                       <img
                         src={item.image}
-                        alt={item.alt || item.label}
+                        alt={item.alt || `${item.label} — ${detail.title}`}
+                        width={640}
+                        height={400}
+                        loading="lazy"
+                        decoding="async"
                         style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
                       />
                     </div>

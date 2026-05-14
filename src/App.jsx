@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import SeoHead from "./seo/SeoHead";
+import HomePageSchema from "./seo/HomePageSchema";
+import { HOME_META_DESCRIPTION } from "./seo/homeMeta";
+import { HOME_FAQS } from "./data/homeFaqs";
+import SeoLinkHub from "./components/SeoLinkHub";
 import logo from "./assets/logo.png";
 import welcomeImg from "./assets/welcome.png";
 import aboutBanner from "./assets/about-banner.jpg";
@@ -176,6 +182,15 @@ export default function App() {
 
   return (
     <div className="site-root">
+      <SeoHead
+        title="Industrial CCTV, Access Control & IT Infrastructure Solutions"
+        description={HOME_META_DESCRIPTION}
+        pathname="/"
+      />
+      <HomePageSchema />
+      <Helmet>
+        <link rel="preload" as="image" href={welcomeImg} fetchPriority="high" />
+      </Helmet>
       <div className="topbar">
         <div className="container topbar-inner">
           <span>Mon-Sat 9:30 AM - 6:30 PM</span>
@@ -189,7 +204,7 @@ export default function App() {
       <header className="navbar">
         <div className="container nav-inner">
           <Link className="brand" to="/">
-            <img src={logo} alt="RAB India logo" />
+            <img src={logo} alt="RAB India — industrial security company logo" width={48} height={48} decoding="async" />
             <div>
               <h2 className="brand-title">RAB INDIA</h2>
             </div>
@@ -213,6 +228,15 @@ export default function App() {
                 <a href="#solutions">Core Solutions</a>
                 <a href="#products">Product Categories</a>
                 <a href="#certifications">Certifications</a>
+                <Link to="/services" onClick={() => setMenuOpen(false)}>
+                  Service pages
+                </Link>
+                <Link to="/locations" onClick={() => setMenuOpen(false)}>
+                  Service areas
+                </Link>
+                <Link to="/blog" onClick={() => setMenuOpen(false)}>
+                  Blog
+                </Link>
               </div>
             </div>
             {navLinks.map((item) => (
@@ -281,6 +305,7 @@ export default function App() {
                     className={`hero-slide-img${i === heroIndex ? " is-active" : ""}`}
                     loading={i === 0 ? "eager" : "lazy"}
                     decoding="async"
+                    fetchPriority={i === 0 ? "high" : "low"}
                   />
                 ))}
                 <div className="hero-slide-dots" aria-hidden="true">
@@ -302,7 +327,14 @@ export default function App() {
         <section className="section" id="about">
           <div className="container about-band reveal">
             <div className="about-band-grid">
-              <img src={welcomeImg} alt="RAB India operations and engineering team" />
+              <img
+                src={welcomeImg}
+                alt="RAB India operations and engineering team at industrial client site"
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={520}
+              />
               <div>
                 <div className="section-head">
                   <h2>About RAB India</h2>
@@ -340,7 +372,12 @@ export default function App() {
                   aria-label={`Open details: ${item.title}`}
                 >
                   <div className="card-media">
-                    <img src={item.image} alt="" />
+                    <img
+                      src={item.image}
+                      alt={`${item.title} — industrial security solution`}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="card-body">
                     <h3>{item.title}</h3>
@@ -396,7 +433,12 @@ export default function App() {
                   aria-label={`Open details: ${item.name}`}
                 >
                   <div className="card-media">
-                    <img src={item.image} alt="" />
+                    <img
+                      src={item.image}
+                      alt={`${item.name} — product category`}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="card-body">
                     <h3>{item.name}</h3>
@@ -420,7 +462,7 @@ export default function App() {
               <div className="logo-track">
                 {[...trustLogos, ...trustLogos].map((item, index) => (
                   <div className="logo-chip" key={`${index}-${item}`}>
-                    <img src={item} alt="Trusted client logo" />
+                    <img src={item} alt="Industrial client brand logo" loading="lazy" decoding="async" />
                   </div>
                 ))}
               </div>
@@ -475,6 +517,25 @@ export default function App() {
           </div>
         </section>
 
+        <section className="section" id="faq">
+          <div className="container reveal">
+            <div className="section-head">
+              <h2>Frequently asked questions</h2>
+              <p>
+                Straight answers for procurement, IT, and facility teams — written for voice search and AI summaries.
+              </p>
+            </div>
+            <div className="faq-grid">
+              {HOME_FAQS.map((f) => (
+                <article className="faq-card" key={f.question}>
+                  <h3 className="faq-q">{f.question}</h3>
+                  <p className="faq-a">{f.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section" id="certifications">
           <div className="container reveal">
             <div className="section-head">
@@ -489,6 +550,8 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <SeoLinkHub />
 
         <section className="section" id="contact">
           <div className="container reveal contact">
