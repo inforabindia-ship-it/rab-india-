@@ -1,6 +1,10 @@
 import { useLocation } from "react-router-dom";
 import SeoHead from "../seo/SeoHead";
-import { HOME_META_DESCRIPTION, HOME_TITLE_SEGMENT } from "../seo/homeMeta";
+import {
+  GOOGLE_SITE_VERIFICATION,
+  HOME_META_DESCRIPTION,
+  HOME_TITLE_SEGMENT
+} from "../seo/homeMeta";
 
 /**
  * Renders homepage SEO immediately (outside lazy routes) so OG/Twitter tags
@@ -14,6 +18,8 @@ export default function SeoRouteDefaults() {
   }
 
   return (
-    <SeoHead title={HOME_TITLE_SEGMENT} description={HOME_META_DESCRIPTION} pathname="/" />
+    <SeoHead title={HOME_TITLE_SEGMENT} description={HOME_META_DESCRIPTION} pathname="/">
+      <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+    </SeoHead>
   );
 }

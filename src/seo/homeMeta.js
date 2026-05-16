@@ -11,3 +11,6 @@ export const HOME_H1 =
  */
 export const HOME_META_DESCRIPTION =
   "RAB INDIA provides industrial security solutions—CCTV, biometric attendance, and boom barriers—from Baddi to Chandigarh and Mohali. Design, install, support.";
+
+/** Google Search Console — homepage HTML tag verification (keep `index.html` in sync). */
+export const GOOGLE_SITE_VERIFICATION = "F-pMYqA-674HvhbadDqc2mAfdybDbm6xjKv3tzh-4Hg";
