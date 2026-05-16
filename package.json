@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.mjs",
-    "build": "vite build",
+    "build:ssr": "vite build --ssr src/ssg/entry-server.jsx --outDir dist-ssr",
+    "build": "vite build && npm run build:ssr && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

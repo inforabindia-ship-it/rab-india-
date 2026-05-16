@@ -27,10 +27,10 @@ function svc(
 export const SERVICES = [
   svc(
     "cctv-solutions",
-    "Industrial CCTV & Video Surveillance Solutions | RAB INDIA",
-    "Design, installation, and commissioning of industrial CCTV, NVR/DVR, analytics, and perimeter monitoring across North India. Site surveys, structured cabling, and AMC. +91 7814421210.",
-    "Industrial CCTV & Video Surveillance That Holds Up on the Plant Floor",
-    "Factories need more than consumer cameras behind glass. RAB INDIA specifies industrial-grade CCTV with storage sizing, time sync, access-controlled viewing, and maintenance paths suited to dust, vibration, and multi-shift operations.",
+    "Industrial CCTV Solutions | RAB INDIA — Baddi, Chandigarh & Mohali",
+    "RAB INDIA delivers industrial CCTV and factory surveillance—installation, NVR/DVR sizing, and support from Baddi across Chandigarh, Mohali, Panchkula, and Nalagarh.",
+    "Industrial CCTV solutions for factory and campus surveillance",
+    "Survey-led CCTV design, installation, and support for factories and campuses—from Baddi across Chandigarh Tricity, Mohali, Panchkula, and Nalagarh.",
     [
       "Camera models matched to lighting, distance, and mounting constraints — not one-size-fits-all SKUs.",
       "Recording retention aligned to incident review needs and available network/storage budgets.",

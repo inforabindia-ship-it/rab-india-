@@ -9,6 +9,150 @@ export const BLOG_CATEGORIES = [
 
 const posts = [
   {
+    slug: "best-cctv-camera-for-factories-in-baddi",
+    title: "Best CCTV Camera for Factories in Baddi: A Practical Selection Guide",
+    category: "CCTV",
+    excerpt:
+      "How to choose factory CCTV in Baddi industrial estates — camera types, resolution, low-light performance, recording, and placement — without overspending or missing evidence when you need it.",
+    datePublished: "2026-05-16",
+    dateModified: "2026-05-16",
+    author: "RAB INDIA Technical Team",
+    quickAnswer:
+      "For most Baddi factories, a mix of fixed bullet cameras at gates and perimeters and varifocal domes on production and store aisles works best. Prioritise stable night imaging, dust-rated housings, PoE reliability, and retention you can defend after an incident — not maximum megapixel count on every channel.",
+    keyTakeaways: [
+      "Match camera type to the scene: bullets for long approaches, domes for indoor aisles, PTZ only where an operator will actually use presets.",
+      "2–4 MP is enough for most identification tasks if lens angle and mounting height are correct.",
+      "Plan storage from incident types you investigate, not from brochure retention claims.",
+      "Separate surveillance VLANs and document PoE budgets before ceiling work starts.",
+      "Handover should include a camera map, credentials packet, and sample export test — not only a live view on a phone."
+    ],
+    sections: [
+      {
+        h2: "What plant managers in Baddi usually mean by “best”",
+        paragraphs: [
+          "When teams ask for the best CCTV camera for a factory, they rarely want a single SKU. They want proof after theft, contractor disputes, safety near-misses, or gate irregularities — without daily downtime or mystery footage gaps.",
+          "Baddi’s industrial belt adds predictable constraints: dust in dry seasons, temperature swings, long perimeter lines, and networks that grew in phases. A camera that looks fine in a showroom can struggle on a north-facing loading bay at 5 a.m."
+        ]
+      },
+      {
+        h2: "How the site environment should drive your shortlist",
+        paragraphs: [
+          "Start with a one-page scene list: main gate, weighbridge approach, finished-goods store, production hall entries, utility yard, and any cash or high-value storage. Note lighting (natural, LED, sodium), vibration, and whether wash-down or chemical mist is present.",
+          "That list tells you housing rating, lens choice, and whether you need supplemental lighting instead of chasing extreme low-light sensors everywhere."
+        ],
+        bullets: [
+          "Outdoor gates and roads: IP66+ bullet or turret, varifocal lens, WDR for headlights and glare.",
+          "Production halls: dome or turret, 2.8–6 mm varifocal, aim for face-level evidence at choke points — not blanket ceiling coverage.",
+          "Stores and dispatch: higher mounting with tighter lens to read labels and hand-offs at counters.",
+          "Perimeter: fewer, better-placed cameras beat a high count of narrow views that miss incident context."
+        ]
+      },
+      {
+        h2: "Camera types that hold up on real shop floors",
+        subsections: [
+          {
+            h3: "Bullet and turret cameras",
+            paragraphs: [
+              "Use these on approach roads, gate lanes, and external walls. Varifocal lenses let you adjust after vehicles and barriers are in place — a common post-install fix in Baddi when traffic patterns change.",
+              "Avoid aiming directly into rising sun without WDR; morning glare is a frequent cause of “camera failed” tickets that are really exposure limits."
+            ]
+          },
+          {
+            h3: "Dome cameras",
+            paragraphs: [
+              "Domes suit indoor aisles and packing areas where you need a cleaner look and vandal resistance. For high bays, confirm the dome’s minimum focus distance — otherwise near pallets look sharp and far aisles do not.",
+              "If forklifts carry tall loads, check clearance so domes are not knocked out of aim monthly."
+            ]
+          },
+          {
+            h3: "PTZ and specialty cameras",
+            paragraphs: [
+              "PTZ is justified when someone actively tours presets during shifts — large yards, shared tank farms, or multi-gate estates. Passive PTZ channels that never move rarely beat two well-aimed fixed cameras on cost and reliability.",
+              "Thermal or analytics cameras can help on dark perimeters, but treat them as supplements to identification cameras at gates and dispatch, not replacements."
+            ]
+          }
+        ]
+      },
+      {
+        h2: "Resolution and lens: spend where identification matters",
+        paragraphs: [
+          "4K on every channel is seldom the best factory CCTV strategy. Two to four megapixel sensors with the right lens and mount height usually deliver clearer evidence at gates and weighbridges than an oversized sensor aimed too wide.",
+          "A practical rule: if you cannot describe what a channel must prove in one sentence, fix the scene design before buying more megapixels."
+        ]
+      },
+      {
+        h2: "Low light, dust, and power reality in Himachal plants",
+        paragraphs: [
+          "Many incidents are reviewed from night footage. Validate night performance on-site with the actual lights you use — not demo mode in a supplier office. Where lighting cannot be improved, plan IR placement carefully to avoid hotspot washout on reflective paint and metal.",
+          "Dust accumulates on domes faster than teams expect. Maintenance access and reachable mounts matter as much as IP rating. For power, coordinate UPS scope for recorders and core switches with IT; cameras may reboot on extended outages if PoE switches are not on protected power."
+        ]
+      },
+      {
+        h2: "Recording, retention, and review workflows",
+        paragraphs: [
+          "Pick retention from investigation habits: if HR and security typically review the last seven to fourteen days, design storage with growth headroom for added cameras. Bitrate varies with motion — busy forklift aisles cost more than a static wall.",
+          "For a deeper sizing framework, see our article on CCTV storage planning for factories. Local recording with controlled remote access remains common in Baddi; cloud can help multi-site estates but must match data and uptime policies."
+        ]
+      },
+      {
+        h2: "Network and installation discipline",
+        paragraphs: [
+          "PoE budgets, cable lengths, and VLAN separation should be documented before installers cut ceilings. Surveillance on the same flat network as ERP is a recurring source of correlated outages.",
+          "If you are scaling past a few dozen cameras, read the structured cabling checklist for IP camera rollouts — it covers labeling and switch headroom that save hours during the first real incident."
+        ]
+      },
+      {
+        h2: "Placement priorities for Baddi factories",
+        bullets: [
+          "Gate lanes: capture face and vehicle plate context in one frame where possible.",
+          "Weighbridge and dispatch: document hand-offs and ticket disputes.",
+          "Store inward/outward: one choke-point camera beats four wide shots.",
+          "Production entries: shift overlap and contractor movement.",
+          "Utility and scrap yards: theft risk without over-investing in low-value background."
+        ],
+        paragraphs: [
+          "Commissioning should end with a walk-through at each camera with the security lead and a sample export to HR or legal format. If exports fail during handover, they will fail during an audit."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        q: "What is the best CCTV camera for a factory in Baddi?",
+        a: "There is no single best model for every wall. Most Baddi plants do well with IP66 bullet or turret cameras outdoors, varifocal domes indoors, and recording sized for 7–14 day investigations. Choose based on scene, lighting, and what you must prove — not a generic “best” list from a brochure."
+      },
+      {
+        q: "How many CCTV cameras does a small factory need?",
+        a: "A compact unit often needs six to twelve well-placed cameras covering gate, dispatch, store choke points, and one production entry — not thirty wide-angle views. Add channels when you can name the incident type each new camera must support."
+      },
+      {
+        q: "Do factories need 4K CCTV cameras?",
+        a: "Usually not on every channel. Use higher resolution at identification points (gates, counters) and moderate resolution in coverage areas. Lens, mount height, and lighting matter more than megapixel count for most disputes."
+      },
+      {
+        q: "Can CCTV work during power cuts in industrial areas?",
+        a: "Yes, if recorders, core switches, and internet paths have agreed UPS coverage and cameras reboot cleanly after outages. Define this in the BOQ — otherwise “works on generator” assumptions create gaps on long shifts."
+      },
+      {
+        q: "Who installs CCTV in Baddi industrial areas?",
+        a: "Look for integrators who document VLAN design, provide as-built camera maps, train your team on exports, and commission night footage on your actual lighting. RAB INDIA supports survey, supply, installation, and AMC across Baddi and nearby industrial belts."
+      },
+      {
+        q: "How long should factory CCTV footage be stored?",
+        a: "Match retention to how far back your security and HR teams typically investigate — often 15 to 30 days for general operations, longer where compliance or high-value inventory requires it. Size storage after a short on-site bitrate sample, not catalog defaults alone."
+      }
+    ],
+    relatedLinks: [
+      { to: "/cctv-installation-baddi", label: "CCTV installation in Baddi" },
+      { to: "/services/cctv-solutions", label: "CCTV solutions overview" },
+      { to: "/blog/how-to-plan-cctv-storage-for-factories", label: "CCTV storage planning" },
+      { to: "/blog/structured-cabling-checklist-before-you-add-100-ip-cameras", label: "IP camera cabling checklist" }
+    ],
+    cta: {
+      title: "Planning CCTV for a Baddi factory?",
+      body: "Share your plant layout, shift pattern, and what you need to prove (theft, safety, contractor access, or dispatch disputes). We will suggest camera types, retention, and a phased install sequence — without pushing unnecessary channels."
+    }
+  },
+  {
     slug: "how-to-plan-cctv-storage-for-factories",
     title: "How to Plan CCTV Storage for Factories (Without Surprises in Month Six)",
     category: "CCTV",

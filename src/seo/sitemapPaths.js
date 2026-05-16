@@ -2,7 +2,8 @@ import { LOCATION_SLUGS } from "../data/localPages.js";
 import { SERVICE_SLUGS } from "../data/servicePages.js";
 import { BLOG_SLUGS } from "../data/blogPosts.js";
 import { PRODUCT_ROUTE_IDS } from "../data/productRouteIds.js";
-import { LOCAL_SEO_ROUTES } from "../data/localSeoLandings.js";
+import { ALL_LOCAL_LANDING_ROUTES } from "../data/localSeoLandings.js";
+import { CCTV_LOCAL_ROUTES } from "../data/cctvLocalLandings.js";
 
 /** All public pathnames for sitemap generation (no hash routes). */
 export function getAllSitemapPathnames() {
@@ -11,6 +12,7 @@ export function getAllSitemapPathnames() {
   LOCATION_SLUGS.forEach((s) => paths.add(`/locations/${s}`));
   SERVICE_SLUGS.forEach((s) => paths.add(`/services/${s}`));
   BLOG_SLUGS.forEach((s) => paths.add(`/blog/${s}`));
-  LOCAL_SEO_ROUTES.forEach((r) => paths.add(`/${r}`));
+  ALL_LOCAL_LANDING_ROUTES.forEach((r) => paths.add(`/${r}`));
+  CCTV_LOCAL_ROUTES.forEach((r) => paths.add(`/${r}`));
   return [...paths].sort();
 }

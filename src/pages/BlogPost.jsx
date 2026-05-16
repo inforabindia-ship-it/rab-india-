@@ -112,12 +112,56 @@ export default function BlogPost() {
             <p className="seo-hero-lead">{post.excerpt}</p>
           </header>
 
+          {post.quickAnswer ? (
+            <aside className="seo-panel seo-panel--answer" aria-label="Quick answer">
+              <p className="seo-answer-label">In short</p>
+              <p className="seo-answer-text">{post.quickAnswer}</p>
+            </aside>
+          ) : null}
+
+          {post.keyTakeaways?.length ? (
+            <section className="seo-panel seo-panel--takeaways" aria-labelledby={`takeaways-${post.slug}`}>
+              <h2 id={`takeaways-${post.slug}`} className="seo-panel-title">
+                Key takeaways
+              </h2>
+              <ul className="seo-bullet-list">
+                {post.keyTakeaways.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           <div className="seo-prose">
             {post.sections.map((sec) => (
-              <section key={sec.h2}>
-                <h2 className="seo-panel-title">{sec.h2}</h2>
-                {sec.paragraphs.map((para, i) => (
+              <section key={sec.h2} aria-labelledby={`sec-${post.slug}-${sec.h2.slice(0, 24)}`}>
+                <h2 id={`sec-${post.slug}-${sec.h2.slice(0, 24)}`} className="seo-prose-h2">
+                  {sec.h2}
+                </h2>
+                {sec.paragraphs?.map((para, i) => (
                   <p key={i}>{para}</p>
+                ))}
+                {sec.bullets?.length ? (
+                  <ul className="seo-bullet-list">
+                    {sec.bullets.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {sec.subsections?.map((sub) => (
+                  <div key={sub.h3}>
+                    <h3 className="seo-prose-h3">{sub.h3}</h3>
+                    {sub.paragraphs?.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                    {sub.bullets?.length ? (
+                      <ul className="seo-bullet-list">
+                        {sub.bullets.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
                 ))}
               </section>
             ))}
@@ -141,11 +185,11 @@ export default function BlogPost() {
 
           <section className="seo-panel seo-panel--cta" aria-labelledby={`cta-${post.slug}`}>
             <h2 id={`cta-${post.slug}`} className="seo-panel-title">
-              Want this implemented on your site?
+              {post.cta?.title ?? "Want this implemented on your site?"}
             </h2>
             <p>
-              Share your city, plant type, and what you are trying to prove with data (security, compliance, or
-              operations). We will recommend a realistic deployment sequence.
+              {post.cta?.body ??
+                "Share your city, plant type, and what you are trying to prove with data (security, compliance, or operations). We will recommend a realistic deployment sequence."}
             </p>
             <div className="seo-hero-actions">
               <a className="button button-primary" href="tel:+917814421210">
@@ -163,8 +207,15 @@ export default function BlogPost() {
           <nav className="seo-inline-nav" aria-label="Related reading">
             <span className="seo-inline-label">Related:</span>
             <Link to="/blog">All articles</Link>
+            {(post.relatedLinks ?? []).map((link) => (
+              <Link key={link.to} to={link.to}>
+                {link.label}
+              </Link>
+            ))}
             <Link to="/services">Service pages</Link>
-            <Link to="/services/cctv-solutions">CCTV service overview</Link>
+            {!post.relatedLinks?.some((l) => l.to === "/services/cctv-solutions") ? (
+              <Link to="/services/cctv-solutions">CCTV service overview</Link>
+            ) : null}
             <Link to="/locations">Local pages</Link>
           </nav>
         </article>

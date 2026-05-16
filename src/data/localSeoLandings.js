@@ -1,7 +1,11 @@
 /**
  * Service + city intent pages (flat URLs). Copy is written for humans first; city/service terms appear where they add clarity, not in every sentence.
  * `serviceSlug` links back to /services/:slug; `locationSlug` to /locations/:slug.
+ *
+ * Dedicated CCTV city pages use `cctvLocalLandings.js` + `CctvLocalLandingPage` (see `CCTV_LOCAL_ROUTES`).
  */
+
+import { CCTV_LOCAL_LANDINGS, CCTV_LOCAL_ROUTES } from "./cctvLocalLandings.js";
 
 function L(config) {
   return { ...config };
@@ -14,8 +18,8 @@ export const LOCAL_SEO_LANDINGS = [
     locationSlug: "baddi",
     metaTitle: "CCTV Installation in Baddi | RAB INDIA",
     metaDescription:
-      "CCTV layout, cabling, recording, and commissioning for Baddi-area plants and logistics gates—clear scope, documented handover, and AMC-ready support. Call +91 7814421210.",
-    h1: "CCTV installation for Baddi-area factories and warehouses",
+      "CCTV installation in Baddi for factories and warehouses—industrial cameras, NVR sizing, cabling, and commissioning. RAB INDIA serves Baddi, Nalagarh, and Barotiwala.",
+    h1: "CCTV installation in Baddi for factories, warehouses, and commercial sites",
     lead:
       "Dense industrial belts need CCTV that survives dust, vibration, and night-time truck cycles—not consumer kits behind glass. We plan sightlines, storage, and access policies so your team can investigate incidents without guesswork.",
     sections: [
@@ -279,8 +283,11 @@ export const LOCAL_SEO_LANDINGS = [
   })
 ];
 
-/** Route segments (no leading slash) for React Router and sitemap. */
-export const LOCAL_SEO_ROUTES = LOCAL_SEO_LANDINGS.map((p) => p.route);
+/** All local landing route segments (sitemap includes every entry). */
+export const ALL_LOCAL_LANDING_ROUTES = LOCAL_SEO_LANDINGS.map((p) => p.route);
+
+/** Routes handled by generic `LocalServiceLanding` (dedicated pages excluded). */
+export const LOCAL_SEO_ROUTES = ALL_LOCAL_LANDING_ROUTES.filter((route) => !CCTV_LOCAL_ROUTES.includes(route));
 
 const byRoute = Object.fromEntries(LOCAL_SEO_LANDINGS.map((p) => [`/${p.route}`, p]));
 
@@ -290,6 +297,19 @@ export function getLocalLandingByPathname(pathname) {
 }
 
 /** A few related landings for a service page (not exhaustive; avoids stuffing). */
-export function getRelatedLandingsForService(serviceSlug, limit = 3) {
-  return LOCAL_SEO_LANDINGS.filter((p) => p.serviceSlug === serviceSlug).slice(0, limit);
+export function getRelatedLandingsForService(serviceSlug, limit = 6) {
+  const fromGeneric = LOCAL_SEO_LANDINGS.filter((p) => p.serviceSlug === serviceSlug);
+  const cctvMapped = CCTV_LOCAL_LANDINGS.filter((p) => p.serviceSlug === serviceSlug).map((p) => ({
+    route: p.route,
+    navLabel: p.breadcrumbLabel,
+    serviceSlug: p.serviceSlug
+  }));
+  const seen = new Set();
+  const merged = [];
+  for (const p of [...fromGeneric, ...cctvMapped]) {
+    if (seen.has(p.route)) continue;
+    seen.add(p.route);
+    merged.push(p);
+  }
+  return merged.slice(0, limit);
 }

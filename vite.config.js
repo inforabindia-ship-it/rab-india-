@@ -1,15 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-/**
- * SEO: Primary metadata is applied client-side (react-helmet-async). For crawlers with limited JS,
- * add prerendering (host-level), a prerender plugin, or move public routes to SSR (Remix/Next).
- */
+/** Client + SSR bundles; post-build prerender in scripts/prerender.mjs */
 export default defineConfig({
   plugins: [react()],
   base: "/",
   server: {
     historyApiFallback: true
+  },
+  ssr: {
+    noExternal: ["react-helmet-async", "react-router-dom", "react-router"]
   },
   build: {
     rollupOptions: {
