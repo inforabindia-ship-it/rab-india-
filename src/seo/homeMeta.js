@@ -6,8 +6,8 @@ export const HOME_H1 =
   "Industrial CCTV, access control & IT infrastructure for factories and campuses";
 
 /**
- * Default home meta description — mirrored in WebPage JSON-LD.
- * Mentions the operating base and primary corridors once each; avoid repeating the same city list elsewhere on-page.
+ * Default home meta description — mirrored in WebPage JSON-LD and `index.html` shell tags.
+ * ~110–160 chars; keep `index.html` meta/og/twitter description in sync when editing.
  */
 export const HOME_META_DESCRIPTION =
-  "RAB INDIA engineers industrial CCTV, access control, weighing, telecom, networking, and fire monitoring—based in Baddi, with deployments across Chandigarh Tricity, Mohali, Panchkula, and Nalagarh. Structured installs & support. +91 7814421210.";
+  "RAB INDIA provides industrial security solutions—CCTV, biometric attendance, and boom barriers—from Baddi to Chandigarh and Mohali. Design, install, support.";

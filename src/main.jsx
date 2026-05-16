@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import "./styles.css";
 
 import FloatingCtas from "./components/FloatingCtas";
+import SeoRouteDefaults from "./components/SeoRouteDefaults.jsx";
 import { LOCAL_SEO_ROUTES } from "./data/localSeoLandings.js";
 
 const App = lazy(() => import("./App.jsx"));
@@ -29,6 +30,7 @@ function PageSkeleton() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HelmetProvider>
     <BrowserRouter>
+      <SeoRouteDefaults />
       <FloatingCtas />
       <Suspense fallback={<PageSkeleton />}>
         <Routes>
