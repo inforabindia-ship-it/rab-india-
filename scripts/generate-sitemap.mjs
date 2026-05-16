@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_ORIGIN } from "../src/seo/site.js";
@@ -7,8 +7,8 @@ import { getAllSitemapPathnames } from "../src/seo/sitemapPaths.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const publicDir = join(root, "public");
-const sitemapFile = join(publicDir, "sitemap.xml");
-const robotsFile = join(publicDir, "robots.txt");
+const distDir = join(root, "dist");
+const writeDist = process.argv.includes("--dist");
 
 /** XML-escape text inside element bodies (defensive for unusual path segments). */
 function escapeXml(text) {
@@ -58,9 +58,6 @@ ${body}
 </urlset>
 `;
 
-writeFileSync(sitemapFile, xml, "utf8");
-console.log(`[sitemap] wrote ${urls.length} URLs -> ${sitemapFile}`);
-
 const robots =
   `User-agent: *
 Allow: /
@@ -68,5 +65,21 @@ Allow: /
 Sitemap: ${absoluteLoc("/sitemap.xml")}
 ` + "\n";
 
-writeFileSync(robotsFile, robots, "utf8");
-console.log(`[robots] wrote -> ${robotsFile}`);
+const outputDirs = [publicDir];
+if (writeDist) {
+  if (!existsSync(distDir)) {
+    console.error("[sitemap] dist/ missing — run vite build before --dist");
+    process.exit(1);
+  }
+  outputDirs.push(distDir);
+}
+
+for (const dir of outputDirs) {
+  mkdirSync(dir, { recursive: true });
+  const sitemapPath = join(dir, "sitemap.xml");
+  const robotsPath = join(dir, "robots.txt");
+  writeFileSync(sitemapPath, xml, "utf8");
+  writeFileSync(robotsPath, robots, "utf8");
+  console.log(`[sitemap] wrote ${urls.length} URLs -> ${sitemapPath}`);
+  console.log(`[robots] wrote -> ${robotsPath}`);
+}
