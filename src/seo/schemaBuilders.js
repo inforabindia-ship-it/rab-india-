@@ -12,11 +12,15 @@ const ORG_ID = `${SITE_ORIGIN}/#organization`;
 const LOCAL_ID = `${SITE_ORIGIN}/#localbusiness`;
 const WEBSITE_ID = `${SITE_ORIGIN}/#website`;
 
+/** Primary service areas for LocalBusiness + Service JSON-LD (target markets). */
+export const AREA_SERVED_NAMES = ["Baddi", "Chandigarh", "Mohali", "Panchkula", "Nalagarh"];
+
 export function organizationNode() {
   return {
     "@type": "Organization",
     "@id": ORG_ID,
     name: BUSINESS_LEGAL_NAME,
+    legalName: BUSINESS_LEGAL_NAME,
     url: SITE_ORIGIN,
     email: EMAIL,
     telephone: PHONE_E164,
@@ -37,6 +41,7 @@ export function localBusinessNode(areaServedNames) {
     "@type": "LocalBusiness",
     "@id": LOCAL_ID,
     name: BUSINESS_LEGAL_NAME,
+    legalName: BUSINESS_LEGAL_NAME,
     url: SITE_ORIGIN,
     telephone: PHONE_E164,
     email: EMAIL,
@@ -121,9 +126,31 @@ export function serviceNode({ idSuffix, name, description, areaServed }) {
   };
 }
 
-export function faqPageNode(faqs) {
+/** Service entity for a city / region landing (`/locations/:slug`). */
+export function locationDeploymentServiceNode({ slug, cityLabel, description }) {
+  const pageUrl = `${SITE_ORIGIN}/locations/${slug}`;
+  return {
+    "@type": "Service",
+    "@id": `${pageUrl}#deployment`,
+    name: `Industrial security & IT deployment — ${cityLabel}`,
+    description,
+    provider: { "@id": ORG_ID },
+    serviceType: "Industrial security & IT deployment",
+    areaServed: AREA_SERVED_NAMES.map((name) => ({ "@type": "AdministrativeArea", name })),
+    url: pageUrl
+  };
+}
+
+/** @param {{ pathname?: string }} [opts] If `pathname` is set, adds stable `@id` for the FAQ block. */
+export function faqPageNode(faqs, opts = {}) {
+  const pathname = opts.pathname;
+  const pageBase =
+    typeof pathname === "string" && pathname.length > 0
+      ? `${SITE_ORIGIN}${pathname.startsWith("/") ? pathname : `/${pathname}`}`
+      : null;
   return {
     "@type": "FAQPage",
+    ...(pageBase ? { "@id": `${pageBase}#faqpage` } : {}),
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
@@ -132,6 +159,26 @@ export function faqPageNode(faqs) {
         text: f.answer
       }
     }))
+  };
+}
+
+/** Reusable `[Organization, LocalBusiness]` pair for page-level `@graph` entries. */
+export function coreEntityGraph() {
+  return [organizationNode(), localBusinessNode(AREA_SERVED_NAMES)];
+}
+
+/** Service entity for the `/services` index (catalog overview). */
+export function servicesCatalogServiceNode() {
+  return {
+    "@type": "Service",
+    "@id": `${SITE_ORIGIN}/services#services-catalog`,
+    name: "Industrial security & IT services",
+    description:
+      "Design, supply, installation, commissioning, and support for CCTV, access control, weighing, enterprise telecom, networking, fire safety integration, and related industrial deployments.",
+    provider: { "@id": ORG_ID },
+    areaServed: AREA_SERVED_NAMES.map((name) => ({ "@type": "AdministrativeArea", name })),
+    serviceType: "Industrial security & IT services",
+    url: `${SITE_ORIGIN}/services`
   };
 }
 
@@ -184,23 +231,4 @@ export const PRIMARY_SERVICE_DEFS = [
     description:
       "Fail-safe door interlocks for clean rooms, critical zones, and regulated industrial environments."
   }
-];
-
-/** Area names for LocalBusiness + Service schema (matches location SEO pages). */
-export const AREA_SERVED_NAMES = [
-  "Baddi",
-  "Nalagarh",
-  "Barotiwala",
-  "Chandigarh",
-  "New Chandigarh",
-  "Mohali",
-  "Panchkula",
-  "Dera Bassi",
-  "Haridwar",
-  "Kala Amb",
-  "Paonta Sahib",
-  "Jammu",
-  "Jammu and Kashmir",
-  "Shimla",
-  "Kasauli"
 ];

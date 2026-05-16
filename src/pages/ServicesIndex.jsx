@@ -4,7 +4,7 @@ import JsonLd from "../seo/JsonLd";
 import SiteHeader from "../components/SiteHeader";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { SITE_ORIGIN } from "../seo/site";
-import { breadcrumbListNode, webPageNode, organizationNode } from "../seo/schemaBuilders";
+import { breadcrumbListNode, webPageNode, coreEntityGraph, servicesCatalogServiceNode } from "../seo/schemaBuilders";
 import { SERVICES } from "../data/servicePages";
 
 const title = "Industrial Security Services | RAB INDIA";
@@ -14,7 +14,8 @@ const description =
 export default function ServicesIndex() {
   const pathname = "/services";
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
+    servicesCatalogServiceNode(),
     webPageNode({ pathname, name: title, description }),
     breadcrumbListNode([
       { name: "Home", url: `${SITE_ORIGIN}/` },

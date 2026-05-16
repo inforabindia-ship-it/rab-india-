@@ -1,8 +1,7 @@
 import { HOME_FAQS } from "../data/homeFaqs";
 import JsonLd from "./JsonLd";
 import {
-  organizationNode,
-  localBusinessNode,
+  coreEntityGraph,
   websiteNode,
   webPageNode,
   faqPageNode,
@@ -11,20 +10,19 @@ import {
   AREA_SERVED_NAMES
 } from "./schemaBuilders";
 import { SITE_NAME } from "./site";
-import { HOME_META_DESCRIPTION } from "./homeMeta";
+import { HOME_H1, HOME_META_DESCRIPTION } from "./homeMeta";
 
 export default function HomePageSchema() {
   const faqs = HOME_FAQS.map((f) => ({ question: f.question, answer: f.answer }));
   const graph = [
-    organizationNode(),
-    localBusinessNode(AREA_SERVED_NAMES),
+    ...coreEntityGraph(),
     websiteNode(),
     webPageNode({
       pathname: "/",
-      name: `${SITE_NAME} — Industrial CCTV, Access Control & IT Infrastructure`,
+      name: `${SITE_NAME} — ${HOME_H1}`,
       description: HOME_META_DESCRIPTION
     }),
-    faqPageNode(faqs),
+    faqPageNode(faqs, { pathname: "/" }),
     ...PRIMARY_SERVICE_DEFS.map((s) =>
       serviceNode({
         idSuffix: s.idSuffix,

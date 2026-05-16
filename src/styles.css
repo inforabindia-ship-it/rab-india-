@@ -258,6 +258,22 @@ img {
   text-transform: uppercase;
 }
 
+.hero-copy .hero-context-line {
+  margin: 0.35rem 0 1.1rem;
+  font-size: 0.95rem;
+}
+
+.hero-copy .hero-context-line a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.hero-copy .hero-context-line a:hover {
+  text-decoration-thickness: 2px;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -345,10 +361,12 @@ img {
   background: #ffffff;
 }
 
-.floating-stats h4 {
+.floating-stats h4,
+.floating-stats .floating-stat-value {
   margin: 0;
   color: var(--text);
   font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .floating-stats p {
@@ -1325,4 +1343,110 @@ a.seo-card:hover {
   .seo-link-hub-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.seo-link-hub-subrow {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.seo-link-hub-sublead {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 75ch;
+}
+
+.seo-link-hub-taglist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.seo-link-hub-taglist a {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 0.88rem;
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.seo-link-hub-taglist a:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.seo-prose-block {
+  margin: 0 0 1rem;
+  color: #334155;
+  line-height: 1.65;
+}
+
+.seo-context-links {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.seo-context-links a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seo-context-links a:hover {
+  text-decoration: underline;
+}
+
+.seo-figure-note {
+  margin: 2rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 0 10px 10px 0;
+}
+
+.seo-figure-note figcaption {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.seo-figure-note code {
+  font-size: 0.82rem;
+}
+
+.footer-seo-line {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.footer-seo-line a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-seo-line a:hover {
+  text-decoration: underline;
+}
+
+.seo-topic-suggestions {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.seo-topic-suggestions li {
+  margin: 0.4rem 0;
 }

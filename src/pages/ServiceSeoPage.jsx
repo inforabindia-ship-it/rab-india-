@@ -9,11 +9,12 @@ import {
   breadcrumbListNode,
   webPageNode,
   faqPageNode,
-  organizationNode,
+  coreEntityGraph,
   serviceNode,
   AREA_SERVED_NAMES
 } from "../seo/schemaBuilders";
 import { getService } from "../data/servicePages";
+import { getRelatedLandingsForService } from "../data/localSeoLandings";
 
 export default function ServiceSeoPage() {
   const { slug } = useParams();
@@ -31,7 +32,7 @@ export default function ServiceSeoPage() {
   const productPath = page.productDetailId ? `/product/${page.productDetailId}` : "/";
 
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({
       pathname,
       name: page.metaTitle,
@@ -48,7 +49,7 @@ export default function ServiceSeoPage() {
       { name: "Services", url: `${SITE_ORIGIN}/services` },
       { name: page.h1, url: `${SITE_ORIGIN}${pathname}` }
     ]),
-    faqPageNode(page.faqs.map((f) => ({ question: f.q, answer: f.a })))
+    faqPageNode(page.faqs.map((f) => ({ question: f.q, answer: f.a })), { pathname })
   ];
 
   return (
@@ -117,6 +118,29 @@ export default function ServiceSeoPage() {
               ))}
             </ul>
           </section>
+
+          {(() => {
+            const related = getRelatedLandingsForService(page.slug);
+            if (!related.length) return null;
+            return (
+              <section className="seo-panel" aria-labelledby={`where-${page.slug}`}>
+                <h2 id={`where-${page.slug}`} className="seo-panel-title">
+                  Where we often deploy this work
+                </h2>
+                <p className="seo-prose-block">
+                  These short pages add geography-specific context. They are not keyword clones of this overview—open
+                  the one closest to your site if it helps internal alignment.
+                </p>
+                <ul className="seo-bullet-list">
+                  {related.map((r) => (
+                    <li key={r.route}>
+                      <Link to={`/${r.route}`}>{r.navLabel}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })()}
 
           <section className="seo-panel" aria-labelledby={`faq-${page.slug}`}>
             <h2 id={`faq-${page.slug}`} className="seo-panel-title">

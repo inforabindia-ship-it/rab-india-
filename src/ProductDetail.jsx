@@ -7,7 +7,7 @@ import SiteHeader from "./components/SiteHeader";
 import Breadcrumbs from "./components/Breadcrumbs";
 import { productDetails } from "./productDetails";
 import { SITE_ORIGIN } from "./seo/site";
-import { breadcrumbListNode, webPageNode, organizationNode } from "./seo/schemaBuilders";
+import { breadcrumbListNode, webPageNode, coreEntityGraph } from "./seo/schemaBuilders";
 
 export default function ProductDetail() {
   const { productId } = useParams();
@@ -32,7 +32,7 @@ export default function ProductDetail() {
   const metaTitle = `${detail.title} — Solutions | RAB INDIA`;
 
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({
       pathname,
       name: metaTitle,

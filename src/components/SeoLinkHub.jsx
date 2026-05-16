@@ -3,6 +3,7 @@ import { SERVICE_SLUGS } from "../data/servicePages";
 import { LOCATION_SLUGS } from "../data/localPages";
 import { BLOG_SLUGS } from "../data/blogPosts";
 import { PRODUCT_ROUTE_IDS } from "../data/productRouteIds";
+import { LOCAL_SEO_LANDINGS } from "../data/localSeoLandings";
 
 const serviceLabels = {
   "cctv-solutions": "CCTV",
@@ -114,6 +115,20 @@ export default function SeoLinkHub() {
               ))}
             </ul>
           </div>
+        </div>
+        <div className="seo-link-hub-subrow">
+          <h3 className="seo-link-hub-h3">Local service intent pages</h3>
+          <p className="seo-link-hub-sublead">
+            Short pages that pair one primary service with one geography—useful for procurement teams comparing vendors
+            in a specific belt.
+          </p>
+          <ul className="seo-link-hub-taglist">
+            {LOCAL_SEO_LANDINGS.map((p) => (
+              <li key={p.route}>
+                <Link to={`/${p.route}`}>{p.navLabel}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

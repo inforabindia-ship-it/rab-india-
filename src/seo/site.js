@@ -28,7 +28,10 @@ export const GEO = {
   longitude: 76.79660137439747
 };
 
-/** Optional absolute URL (1200×630 PNG/JPG recommended). Leave null to omit og:image until you add /public/og-share.jpg */
-export const DEFAULT_OG_IMAGE = null;
+/**
+ * Default Open Graph / Twitter preview image (served from `/public/og-share.png`).
+ * Absolute URL so crawlers resolve it correctly. Override per page via `SeoHead` `ogImage` when needed.
+ */
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/og-share.png`;
 
 export const TWITTER_SITE = null;

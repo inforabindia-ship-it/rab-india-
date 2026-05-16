@@ -29,5 +29,15 @@ export const HOME_FAQS = [
     question: "What makes RAB INDIA suitable for factories and plants versus retail-only installers?",
     answer:
       "We focus on industrial environments: harsh conditions, large perimeters, shift operations, integration with plant networks, and documentation suitable for audits. Our designs emphasize reliability, serviceability, and long-term spare availability."
+  },
+  {
+    question: "Do you provide CCTV installation in Baddi?",
+    answer:
+      "Yes—surveys, cabling, recording design, commissioning, and training are part of our normal delivery model for the Baddi–Nalagarh–Barotiwala belt and nearby logistics corridors."
+  },
+  {
+    question: "Do you install boom barriers in Chandigarh?",
+    answer:
+      "Yes, including Tricity logistics gates where loop sensors, safety beams, and clear guard procedures matter as much as the barrier model itself."
   }
 ];

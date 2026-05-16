@@ -4,7 +4,7 @@ import SeoHead from "./seo/SeoHead";
 import JsonLd from "./seo/JsonLd";
 import SiteHeader from "./components/SiteHeader";
 import { SITE_ORIGIN } from "./seo/site";
-import { breadcrumbListNode, webPageNode, organizationNode } from "./seo/schemaBuilders";
+import { breadcrumbListNode, webPageNode, coreEntityGraph } from "./seo/schemaBuilders";
 import aboutBanner from "./assets/about-banner.jpg";
 import welcomeImg from "./assets/welcome.png";
 
@@ -58,7 +58,7 @@ const ABOUT_DESCRIPTION =
 export default function About() {
   const pathname = "/about";
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({
       pathname,
       name: ABOUT_TITLE,

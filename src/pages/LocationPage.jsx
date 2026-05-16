@@ -5,7 +5,7 @@ import JsonLd from "../seo/JsonLd";
 import SiteHeader from "../components/SiteHeader";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { SITE_ORIGIN } from "../seo/site";
-import { breadcrumbListNode, webPageNode, faqPageNode, organizationNode } from "../seo/schemaBuilders";
+import { breadcrumbListNode, webPageNode, faqPageNode, coreEntityGraph, locationDeploymentServiceNode } from "../seo/schemaBuilders";
 import { getLocation } from "../data/localPages";
 
 export default function LocationPage() {
@@ -22,7 +22,7 @@ export default function LocationPage() {
 
   const pathname = `/locations/${page.slug}`;
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({
       pathname,
       name: page.metaTitle,
@@ -33,7 +33,12 @@ export default function LocationPage() {
       { name: "Service areas", url: `${SITE_ORIGIN}/locations` },
       { name: page.cityLabel, url: `${SITE_ORIGIN}${pathname}` }
     ]),
-    faqPageNode(page.faqs.map((f) => ({ question: f.q, answer: f.a })))
+    faqPageNode(page.faqs.map((f) => ({ question: f.q, answer: f.a })), { pathname }),
+    locationDeploymentServiceNode({
+      slug: page.slug,
+      cityLabel: page.cityLabel,
+      description: page.metaDescription
+    })
   ];
 
   return (

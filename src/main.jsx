@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import "./styles.css";
 
 import FloatingCtas from "./components/FloatingCtas";
+import { LOCAL_SEO_ROUTES } from "./data/localSeoLandings.js";
 
 const App = lazy(() => import("./App.jsx"));
 const About = lazy(() => import("./about.jsx"));
@@ -15,6 +16,7 @@ const ServiceSeoPage = lazy(() => import("./pages/ServiceSeoPage.jsx"));
 const ServicesIndex = lazy(() => import("./pages/ServicesIndex.jsx"));
 const BlogIndex = lazy(() => import("./pages/BlogIndex.jsx"));
 const BlogPost = lazy(() => import("./pages/BlogPost.jsx"));
+const LocalServiceLanding = lazy(() => import("./pages/LocalServiceLanding.jsx"));
 
 function PageSkeleton() {
   return (
@@ -39,6 +41,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/services/:slug" element={<ServiceSeoPage />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          {LOCAL_SEO_ROUTES.map((route) => (
+            <Route key={route} path={route} element={<LocalServiceLanding />} />
+          ))}
         </Routes>
       </Suspense>
     </BrowserRouter>

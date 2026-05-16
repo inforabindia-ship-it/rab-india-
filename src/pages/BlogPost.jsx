@@ -8,7 +8,7 @@ import { SITE_ORIGIN } from "../seo/site";
 import {
   breadcrumbListNode,
   webPageNode,
-  organizationNode,
+  coreEntityGraph,
   faqPageNode
 } from "../seo/schemaBuilders";
 import { getBlogPost } from "../data/blogPosts";
@@ -56,7 +56,7 @@ export default function BlogPost() {
   const description = post.excerpt;
 
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({
       pathname,
       name: post.title,
@@ -71,7 +71,7 @@ export default function BlogPost() {
   ];
 
   if (post.faqs?.length) {
-    graph.push(faqPageNode(post.faqs.map((f) => ({ question: f.q, answer: f.a }))));
+    graph.push(faqPageNode(post.faqs.map((f) => ({ question: f.q, answer: f.a })), { pathname }));
   }
 
   return (

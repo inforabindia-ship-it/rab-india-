@@ -4,8 +4,9 @@ import JsonLd from "../seo/JsonLd";
 import SiteHeader from "../components/SiteHeader";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { SITE_ORIGIN } from "../seo/site";
-import { breadcrumbListNode, webPageNode, organizationNode } from "../seo/schemaBuilders";
+import { breadcrumbListNode, webPageNode, coreEntityGraph } from "../seo/schemaBuilders";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "../data/blogPosts";
+import { BLOG_TOPIC_SUGGESTIONS } from "../data/blogTopicSuggestions";
 
 const title = "Industrial Security & Automation Blog | RAB INDIA";
 const description =
@@ -14,7 +15,7 @@ const description =
 export default function BlogIndex() {
   const pathname = "/blog";
   const graph = [
-    organizationNode(),
+    ...coreEntityGraph(),
     webPageNode({ pathname, name: title, description }),
     breadcrumbListNode([
       { name: "Home", url: `${SITE_ORIGIN}/` },
@@ -68,6 +69,22 @@ export default function BlogIndex() {
               </section>
             );
           })}
+
+          <section className="seo-panel" aria-labelledby="blog-topic-queue">
+            <h2 id="blog-topic-queue" className="seo-panel-title">
+              Editorial queue (industrial + local SEO angles)
+            </h2>
+            <p className="seo-prose-block">
+              Draft titles we publish as engineering-ready articles—each will cross-link to relevant{" "}
+              <Link to="/services">service pages</Link> and <Link to="/locations">location context</Link> without
+              repeating city names in every paragraph.
+            </p>
+            <ul className="seo-topic-suggestions">
+              {BLOG_TOPIC_SUGGESTIONS.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </section>
         </div>
       </main>
       <footer className="footer">

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import SeoHead from "./seo/SeoHead";
 import HomePageSchema from "./seo/HomePageSchema";
-import { HOME_META_DESCRIPTION } from "./seo/homeMeta";
+import { HOME_H1, HOME_META_DESCRIPTION, HOME_TITLE_SEGMENT } from "./seo/homeMeta";
 import { HOME_FAQS } from "./data/homeFaqs";
 import SeoLinkHub from "./components/SeoLinkHub";
 import logo from "./assets/logo.png";
@@ -182,11 +182,7 @@ export default function App() {
 
   return (
     <div className="site-root">
-      <SeoHead
-        title="Industrial CCTV, Access Control & IT Infrastructure Solutions"
-        description={HOME_META_DESCRIPTION}
-        pathname="/"
-      />
+      <SeoHead title={HOME_TITLE_SEGMENT} description={HOME_META_DESCRIPTION} pathname="/" />
       <HomePageSchema />
       <Helmet>
         <link rel="preload" as="image" href={welcomeImg} fetchPriority="high" />
@@ -206,7 +202,7 @@ export default function App() {
           <Link className="brand" to="/">
             <img src={logo} alt="RAB India — industrial security company logo" width={48} height={48} decoding="async" />
             <div>
-              <h2 className="brand-title">RAB INDIA</h2>
+              <p className="brand-title">RAB INDIA</p>
             </div>
           </Link>
 
@@ -258,14 +254,18 @@ export default function App() {
         <section className="hero section">
           <div className="container hero-grid reveal">
             <div className="hero-copy">
-              <span className="hero-tag">Future-Ready Industrial Security</span>
-              <h1>
-                Premium Security Engineering for High-Performance Industrial Environments
-              </h1>
+              <span className="hero-tag">Engineering-led security &amp; IT for industrial sites</span>
+              <h1>{HOME_H1}</h1>
               <p>
-                RAB India designs and deploys advanced surveillance, access control, networking,
-                and safety infrastructure for factories, warehouses, plants, and commercial
-                campuses. We combine reliability, precision, and enterprise-grade support.
+                RAB India designs and deploys surveillance, access, networking, and safety systems for
+                factories, warehouses, plants, and commercial campuses. From Baddi we routinely
+                mobilise to Chandigarh, Mohali, Panchkula, Nalagarh, and along the wider northern
+                industrial corridor when your programme needs consistent delivery and documentation.
+              </p>
+              <p className="hero-context-line">
+                For procurement-ready context, see our{" "}
+                <Link to="/services">service summaries</Link>, <Link to="/locations">regional pages</Link>, or a{" "}
+                <Link to="/cctv-solutions-chandigarh">Chandigarh CCTV overview</Link>.
               </p>
               <div className="hero-actions">
                 <a href="#contact" className="button button-primary">
@@ -277,15 +277,15 @@ export default function App() {
               </div>
               <div className="floating-stats">
                 <div>
-                  <h4>1000+</h4>
+                  <p className="floating-stat-value">1000+</p>
                   <p>B2B Clients Supported</p>
                 </div>
                 <div>
-                  <h4>9+ Years</h4>
+                  <p className="floating-stat-value">9+ Years</p>
                   <p>Security Expertise</p>
                 </div>
                 <div>
-                  <h4>24/7</h4>
+                  <p className="floating-stat-value">24/7</p>
                   <p>Technical Response</p>
                 </div>
               </div>
@@ -341,7 +341,10 @@ export default function App() {
                   <p>
                     Established in 2016, RAB India delivers industrial-grade security architecture
                     and operational support for organizations where uptime, visibility, and control
-                    are mission critical.
+                    are mission critical. Assignments span Himachal Pradesh, Punjab, Haryana,
+                    Uttarakhand, and Jammu &amp; Kashmir when clients need one accountable partner
+                    across multiple sites—including repeat mobilisation to Chandigarh Tricity and
+                    nearby industrial belts when timelines align with your team on the ground.
                   </p>
                 </div>
                 <ul className="list">
@@ -357,10 +360,11 @@ export default function App() {
         <section className="section" id="solutions">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Our Security Solutions</h2>
+              <h2>Industrial security solutions we deliver</h2>
               <p>
-                Engineered systems for complex industrial and commercial environments, optimized
-                for reliability, scale, and operational intelligence.
+                Engineered systems for complex industrial and commercial environments—CCTV, access,
+                weighing, voice, and networking—optimised for reliability, scale, and the way
+                northern Indian plants actually run shifts and maintenance windows.
               </p>
             </div>
             <div className="grid-3">
@@ -393,7 +397,7 @@ export default function App() {
         <section className="section" id="industries">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Industries We Serve</h2>
+              <h2>Industries we support</h2>
               <p>
                 Security and infrastructure solutions tailored to risk profile, operations flow,
                 and compliance requirements of each business domain.
@@ -418,7 +422,7 @@ export default function App() {
         <section className="section" id="products">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Product Categories</h2>
+              <h2>Product lines &amp; categories</h2>
               <p>
                 Modern, high-performance systems selected for quality, serviceability, and
                 enterprise integration readiness.
@@ -453,7 +457,7 @@ export default function App() {
         <section className="section">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Trusted by Leading Brands</h2>
+              <h2>Trusted by leading brands</h2>
               <p>
                 Proven execution and long-term support for reputed businesses and institutions.
               </p>
@@ -473,7 +477,7 @@ export default function App() {
         <section className="section">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Why Choose RAB India</h2>
+              <h2>Why teams choose RAB India</h2>
             </div>
             <div className="grid-4">
               <article className="metric">
@@ -499,7 +503,7 @@ export default function App() {
         <section className="section">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Client Testimonials</h2>
+              <h2>Client testimonials</h2>
               <p>What industrial and enterprise clients say about our delivery standards.</p>
             </div>
             <div className="grid-3">
@@ -522,7 +526,7 @@ export default function App() {
             <div className="section-head">
               <h2>Frequently asked questions</h2>
               <p>
-                Straight answers for procurement, IT, and facility teams — written for voice search and AI summaries.
+                Straight answers for procurement, IT, and facility teams—written for clarity, not keyword noise.
               </p>
             </div>
             <div className="faq-grid">
@@ -539,7 +543,7 @@ export default function App() {
         <section className="section" id="certifications">
           <div className="container reveal">
             <div className="section-head">
-              <h2>Certifications & Quality Standards</h2>
+              <h2>Certifications &amp; quality standards</h2>
             </div>
             <div className="grid-4">
               {certifications.map((item) => (
@@ -557,7 +561,7 @@ export default function App() {
           <div className="container reveal contact">
             <div className="panel contact-info">
               <div className="section-head">
-                <h2>Contact & Inquiry</h2>
+                <h2>Contact &amp; inquiry</h2>
                 <p>
                   Plan your next security upgrade with our technical team. We provide site
                   assessment, architecture recommendations, and deployment roadmaps.
@@ -591,6 +595,12 @@ export default function App() {
 
       <footer className="footer">
         <div className="container">
+          <p className="footer-seo-line">
+            Baddi-based industrial security and IT integrator for the northern corridor. Explore{" "}
+            <Link to="/locations">service areas</Link>,{" "}
+            <Link to="/cctv-installation-baddi">CCTV in Baddi</Link>, or{" "}
+            <Link to="/industrial-security-himachal-pradesh">Himachal-wide delivery notes</Link>.
+          </p>
           © {new Date().getFullYear()} RAB India. Built for secure, modern industrial operations.
         </div>
       </footer>
