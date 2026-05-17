@@ -3,6 +3,18 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/cctv-solutions",
+      "destination": "/services/cctv-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/boom-barrier",
+      "destination": "/services/boom-barrier",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
@@ -22,13 +34,6 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": "(.*)text/html(.*)"
-        }
-      ],
       "destination": "/index.html"
     }
   ]
