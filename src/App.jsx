@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import SeoHead from "./seo/SeoHead";
 import HomePageSchema from "./seo/HomePageSchema";
 import { HOME_H1, HOME_META_DESCRIPTION, HOME_TITLE_SEGMENT } from "./seo/homeMeta";
+import { ADDRESS } from "./seo/site";
 import { HOME_FAQS } from "./data/homeFaqs";
 import SeoLinkHub from "./components/SeoLinkHub";
 import logo from "./assets/logo.png";
@@ -567,7 +568,9 @@ export default function App() {
                   assessment, architecture recommendations, and deployment roadmaps.
                 </p>
               </div>
-              <p>Address: Baddi, Himachal Pradesh, India</p>
+              <p>
+                Address: {ADDRESS.streetAddress}, {ADDRESS.addressLocality} - {ADDRESS.postalCode}
+              </p>
               <p>Phone: +91 7814421210</p>
               <p>Email: info@rabindia.co.in</p>
               <div className="hero-actions">

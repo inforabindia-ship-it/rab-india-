@@ -16,7 +16,7 @@ export const WHATSAPP_E164 = "917814421210";
 export const EMAIL = "info@rabindia.co.in";
 
 export const ADDRESS = {
-  streetAddress: "Baddi",
+  streetAddress: "B-70/F, First Floor, Big B Complex, Sai road",
   addressLocality: "Baddi",
   addressRegion: "Himachal Pradesh",
   postalCode: "173205",
