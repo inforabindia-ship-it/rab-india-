@@ -31,7 +31,8 @@ const urls = getAllSitemapPathnames().sort((a, b) => {
   return a.localeCompare(b, "en");
 });
 
-const lastmod = new Date().toISOString().slice(0, 10);
+// `lastmod` is intentionally omitted until the project stores trustworthy per-page
+// modification dates. A deployment timestamp is not a content-modification date.
 
 function priorityFor(pathname) {
   if (pathname === "/") return "1.0";
@@ -45,7 +46,6 @@ const body = urls
   .map(
     (p) => `  <url>
     <loc>${escapeXml(absoluteLoc(p))}</loc>
-    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priorityFor(p)}</priority>
   </url>`
