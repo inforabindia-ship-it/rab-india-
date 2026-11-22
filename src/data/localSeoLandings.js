@@ -88,15 +88,33 @@ export const LOCAL_SEO_LANDINGS = [
       "Shift change bottlenecks are expensive. We choose modalities and reader counts after observing peak ingress, then align exports with payroll expectations so disputes drop instead of rising after go-live.",
     sections: [
       {
-        title: "Why Mohali IT and light industrial sites ask for structured attendance",
+        title: "Plan for peak shift movement, not average daily attendance",
         body:
-          "Mixed contractor traffic, multi-tenant floors, and audit requests reward clear batching rules. We document enrollment hygiene and exception handling so security and HR share the same playbook."
+          "Mohali workplaces can have very different entry patterns: an office may see a short morning rush, while a plant may process several shift changes and contractor batches. Before selecting terminals, map the number of people arriving in each time window, the available lanes, and the time allowed for each person to authenticate. This helps estimate reader quantity and avoid queues caused by an undersized entry point."
+      },
+      {
+        title: "Choose the right reader and enrolment process",
+        body:
+          "Fingerprint, face, card, or a combined method should be selected around the actual work environment, hygiene rules, user comfort, and site policy. Plan enrolment for employees and contractors, define how lost credentials or failed reads are handled, and assign responsibility for keeping records current. A short pilot at one gate or department can reveal practical issues before a wider rollout."
+      },
+      {
+        title: "Make attendance data useful to HR and security",
+        body:
+          "Confirm the report format, shift rules, exception approvals, and payroll hand-off before installation. Agree who can view or edit records and how corrections are documented. RAB INDIA can assess the site workflow, recommend a suitable configuration, and explain the information needed to scope installation and support."
       }
     ],
     faqs: [
       {
         q: "Which biometric attendance machine is best for factories?",
-        a: "It depends on gloves, hygiene rules, and environment. We pilot a lane or department before scaling so you learn throughput truth early rather than after full rollout."
+        a: "There is no single best model for every factory. Selection depends on the number of users, peak entry rate, working conditions, authentication preference, and the attendance software or payroll process. We recommend shortlisting after reviewing these requirements."
+      },
+      {
+        q: "Can biometric attendance handle multiple shifts and contractors?",
+        a: "Yes, when shift rules, contractor enrolment, exceptions, and reporting permissions are configured clearly. These requirements should be documented before choosing the terminal and software."
+      },
+      {
+        q: "Can we start with one gate before covering the whole site?",
+        a: "A phased pilot can help validate user throughput, enrolment, and reporting. The pilot scope should include the intended shift pattern and a representative group of users."
       }
     ],
     navLabel: "Attendance in Mohali"
@@ -138,15 +156,33 @@ export const LOCAL_SEO_LANDINGS = [
       "When a gate calls a desk, clarity matters. We design intercom and PBX paths for industrial noise, cable distances, and the maintenance access your team will actually use after commissioning.",
     sections: [
       {
-        title: "Commercial access control and voice, without mixing metaphors",
+        title: "Design the communication points around daily operations",
         body:
-          "Intercom is not CCTV; it is coordination infrastructure. We keep scope crisp so procurement sees a voice outcome, not a vague unified platform promise."
+          "Nalagarh industrial sites may need communication between the main gate, security desk, production areas, stores, maintenance teams, and administration. Start by listing each point, who needs to call it, whether calls are internal or external, and what should happen when the first recipient is unavailable. This creates a practical extension plan instead of adding handsets without a clear operating purpose."
+      },
+      {
+        title: "Choose between an intercom, PBX, or IP-PBX approach",
+        body:
+          "The right platform depends on the number of users, existing telephone infrastructure, call routing needs, available network, and expansion plans. If an existing PBX is to be retained, check compatibility, capacity, licensing, and the condition of cabling and handsets. For an IP-based system, review network readiness and power arrangements before deciding where endpoints and equipment will be installed."
+      },
+      {
+        title: "Make the system maintainable after commissioning",
+        body:
+          "Label extensions and cable routes, keep a current endpoint list, and document call groups, transfer rules, and administrator access. Test calls from each important location and confirm how faults are reported. RAB INDIA can assess the current setup and outline an intercom or PBX scope suited to the site's communication requirements."
       }
     ],
     faqs: [
       {
-        q: "Can intercom work with our existing PBX?",
-        a: "Often yes, depending on SIP compatibility and licensing. We validate VLAN and power design before committing to integration outcomes."
+        q: "Can an intercom system work with our existing PBX?",
+        a: "It may be possible, depending on the PBX model, available ports or SIP support, licensing, and the existing cabling. These details should be checked before confirming compatibility."
+      },
+      {
+        q: "Should an industrial site choose a traditional or IP-based intercom?",
+        a: "The decision depends on endpoint count, distance, existing network infrastructure, call features, power availability, and future expansion. A site and system review can help compare the options."
+      },
+      {
+        q: "What should be included in an intercom handover?",
+        a: "The handover should identify extensions and locations, call-routing or group settings, equipment details, administrator access arrangements, and basic fault-reporting steps."
       }
     ],
     navLabel: "Intercom in Nalagarh"
@@ -163,15 +199,33 @@ export const LOCAL_SEO_LANDINGS = [
       "Hillside humidity and winter cycles punish poor lock choices. We select hardware for mortise fit, egress rules, and front-desk workflows so night audits stay calm during peak tourist weeks.",
     sections: [
       {
-        title: "Hotel lock installation in Shimla without guest friction",
+        title: "Match the lock to the guest-room door",
         body:
-          "Training matters as much as hardware. We focus on check-in, overrides, and lost-card scenarios so staff confidence matches the technology investment."
+          "Hotel lock selection starts with the door rather than the card reader. Confirm door thickness, mortise preparation, handle arrangement, handing, frame condition, and the existing latch before finalising hardware. For properties in Shimla, also review exposure to seasonal temperature and humidity changes, access to rooms during installation, and the availability of replacement batteries and compatible spares."
+      },
+      {
+        title: "Map front-desk, housekeeping, and management workflows",
+        body:
+          "The system should support the property's actual operating routine: issuing a guest credential at check-in, setting its validity, handling a room change, cancelling a lost card, and providing authorised staff access. Define separate permissions for reception, housekeeping, and maintenance, and agree how emergency or mechanical overrides are controlled. Staff training should include the everyday tasks as well as common exceptions."
+      },
+      {
+        title: "Plan installation with guest operations in mind",
+        body:
+          "A room-by-room schedule can reduce disruption to occupied rooms and help the property coordinate housekeeping and reception. Before rollout, confirm the number and type of doors, lock finish, credential method, software or encoder requirements, and the process for handover. RAB INDIA can review these details and help define a suitable hotel-lock scope."
       }
     ],
     faqs: [
       {
-        q: "Do you install hotel locks in Shimla year-round?",
-        a: "Yes, with weather-aware scheduling for exposed façades and realistic timelines for battery and spare planning before busy seasons."
+        q: "What information is needed to select electronic hotel locks?",
+        a: "Share the number of guest-room doors, door thickness and type, existing mortise or lock preparation, preferred credential method, and front-desk workflow. A physical door check may be needed before confirming compatibility."
+      },
+      {
+        q: "Can hotel staff have different access permissions?",
+        a: "Access roles can generally be planned for guests, reception, housekeeping, and maintenance, subject to the selected lock platform and software. The property should define who can issue, change, and cancel credentials."
+      },
+      {
+        q: "How can installation be managed in an operating hotel?",
+        a: "Use a room-wise installation and testing schedule coordinated with reception and housekeeping. Confirm room availability, guest communication, and handover checks before starting each batch."
       }
     ],
     navLabel: "Hotel locks in Shimla"
@@ -188,15 +242,33 @@ export const LOCAL_SEO_LANDINGS = [
       "Screening fails when sensitivity goals fight throughput. We design queue geometry and device classes for your visitor peaks, then train operators on consistent calibration habits.",
     sections: [
       {
-        title: "Industrial metal detector supplier with integration discipline",
+        title: "Select the screening equipment for the entry point",
         body:
-          "If you also run access control or CCTV, we align naming and incident steps so security desks do not maintain three unrelated playbooks."
+          "Walk-through metal detectors and handheld detectors serve different roles. A walk-through unit is generally used for a controlled screening lane, while a handheld device supports secondary checks or targeted inspection. For a Chandigarh institution, campus, or industrial checkpoint, first estimate visitor volume, available queue space, screening policy, and the level of operator supervision before choosing the equipment."
+      },
+      {
+        title: "Balance detection settings with people flow",
+        body:
+          "Sensitivity settings, alarm procedures, lane width, and the position of the operator all affect how a checkpoint works in practice. A high-throughput entrance needs a clear process for responding to alarms without creating confusion or unsafe crowding. The screening procedure should be set by the organisation's security team and applied consistently by trained operators."
+      },
+      {
+        title: "Include installation, training, and operating procedures",
+        body:
+          "Before deployment, confirm the power point, installation location, access control around the lane, and the responsible operating team. Handover should cover start-up checks, routine testing, alarm response, escalation, and basic care of the equipment. RAB INDIA can review the checkpoint layout and help define the appropriate walk-through or handheld detector requirement."
       }
     ],
     faqs: [
       {
-        q: "Industrial metal detector supplier in Punjab region—do you cover that?",
-        a: "Yes. Chandigarh Tricity and nearby industrial belts are within our normal deployment radius, with logistics agreed in the project plan."
+        q: "What is the difference between a walk-through and handheld metal detector?",
+        a: "A walk-through detector is used to screen people passing through a designated lane. A handheld detector is commonly used for secondary or targeted checks. The required combination depends on the site's screening procedure."
+      },
+      {
+        q: "How many walk-through detectors does an entrance need?",
+        a: "That depends on visitor volume, arrival peaks, lane layout, screening time, and the organisation's operating procedure. Assess the queue area and expected throughput before deciding the number of lanes."
+      },
+      {
+        q: "Do operators need training to use metal detectors?",
+        a: "Yes. Operators should understand start-up checks, the site's alarm-response procedure, consistent screening practice, and escalation steps. Training should follow the organisation's security policy."
       }
     ],
     navLabel: "Metal detection in Chandigarh"
@@ -213,15 +285,33 @@ export const LOCAL_SEO_LANDINGS = [
       "Large footprints amplify risk when interlock logic is opaque. We make states legible for operators and maintenance, with labelled interfaces and test evidence appropriate to your governance model.",
     sections: [
       {
-        title: "Warehouse security systems vs interlocks—different intent",
+        title: "Define the door sequence and operating purpose",
         body:
-          "Interlocks protect sequences and people; perimeter CCTV protects evidence. We keep messaging clear so budgets land on the right layer first."
+          "A door interlocking system is used where two or more doors must follow an agreed access sequence, such as an airlock or controlled transition. For a Haridwar plant, the first step is to document which doors are part of the sequence, who is authorised to enter, what conditions release each door, and what should happen during an alarm or power interruption. The sequence should reflect the site's approved operating and safety procedures."
+      },
+      {
+        title: "Check the existing doors, hardware, and controls",
+        body:
+          "A retrofit assessment should review door construction, frames, locking hardware, release devices, power availability, cable routes, and the condition of existing access-control equipment. The design must account for emergency egress and the site's required fail-safe or fail-secure behaviour; these decisions should be confirmed with the client's safety and engineering teams rather than assumed."
+      },
+      {
+        title: "Test, document, and hand over the interlock",
+        body:
+          "Commissioning should exercise normal entry, denied access, door-held-open conditions, emergency release, and recovery after a power interruption. Record the agreed sequence and test results so operators and maintenance staff understand the system. RAB INDIA can review the door arrangement and prepare a scope around the required sequence and site conditions."
       }
     ],
     faqs: [
       {
         q: "Can you retrofit interlocks on existing Haridwar plant doors?",
-        a: "Often yes, after strike and structural assessment. We prototype logic on a pilot pair when risk warrants it."
+        a: "A retrofit may be possible after checking the door construction, locking hardware, power, cable routes, access-control equipment, and emergency-release requirements. The final design depends on the site assessment."
+      },
+      {
+        q: "What is the difference between a door interlock and ordinary access control?",
+        a: "Access control decides whether a person may enter a door. An interlock also coordinates multiple doors so they cannot be opened in an unintended sequence. The required logic depends on the process and safety procedure."
+      },
+      {
+        q: "What should be tested before handover?",
+        a: "Test normal access, denied access, door-held-open conditions, emergency release, and recovery from power interruption. The test plan should follow the site's approved safety requirements."
       }
     ],
     navLabel: "Interlocks in Haridwar"
@@ -263,20 +353,33 @@ export const LOCAL_SEO_LANDINGS = [
       "From pharma corridors to logistics-heavy valleys, clients want a partner who understands mountain roads, spare lead times, and the difference between a demo rack and a plant IDF. We plan projects for service access, not just day-one go-live photos.",
     sections: [
       {
-        title: "Factory security solutions with a regional delivery lens",
+        title: "Start with a site-wise security and infrastructure review",
         body:
-          "That means realistic mobilisation schedules, fewer single-vendor miracles, and operator training that matches shift literacy—not slide decks that never reach the guard room."
+          "Industrial sites rarely need every security system in the same combination. A factory may prioritise perimeter CCTV, gate control, and dispatch verification, while an office or campus may need visitor management, attendance, and network infrastructure. Across Himachal Pradesh, the practical first step is to list each facility, its operating hours, critical areas, current systems, and the problems the project must solve."
       },
       {
-        title: "Commercial access control without buzzword soup",
+        title: "Coordinate CCTV, access, weighing, and voice systems",
         body:
-          "We speak plainly about turnstiles, barriers, attendance exports, and audit trails so finance, HR, and security can approve the same scope."
+          "Where multiple systems are planned, define how they will be used together without assuming that every platform needs a technical integration. CCTV supports visual review; access control and attendance manage authorised movement and records; weighing systems support material or dispatch checks; and intercom or PBX supports communication between gates and operating teams. Clear scope boundaries make procurement and future maintenance easier."
+      },
+      {
+        title: "Plan delivery around geography and site readiness",
+        body:
+          "Mobilisation, travel, material movement, civil readiness, cable pathways, power, network availability, and access to work areas all affect project scheduling. RAB INDIA's established focus includes the Baddi–Nalagarh–Barotiwala belt, with projects in other Himachal locations assessed according to scope, logistics, and timelines. A site survey helps establish a realistic sequence for supply, installation, commissioning, and operator handover."
       }
     ],
     faqs: [
       {
-        q: "Do you cover only Baddi or all of Himachal Pradesh?",
-        a: "Baddi–Nalagarh–Barotiwala is our highest-density belt, but we also support Shimla, Kasauli, Kala Amb, Paonta Sahib, and other industrial pockets when timelines and logistics align."
+        q: "Do you cover only Baddi or other parts of Himachal Pradesh too?",
+        a: "Baddi, Nalagarh, and Barotiwala are a key industrial focus. Projects in locations such as Shimla, Kasauli, Kala Amb, and Paonta Sahib can be assessed based on the site, scope, logistics, and schedule."
+      },
+      {
+        q: "Which security systems can be planned for an industrial facility?",
+        a: "Depending on the site, the scope may include CCTV, biometric attendance, access control, boom barriers, metal detection, intercom or PBX, networking, and industrial weighing. A site review helps identify which systems are relevant."
+      },
+      {
+        q: "Can multiple facilities be covered under one project?",
+        a: "A multi-site project can be planned with common equipment standards and documentation where appropriate. Each location still needs its own assessment of infrastructure, operating requirements, and delivery schedule."
       }
     ],
     navLabel: "Himachal industrial security"
